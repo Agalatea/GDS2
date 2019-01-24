@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/RockSwipe.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Borderd.tscn" type="PackedScene" id=7]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )

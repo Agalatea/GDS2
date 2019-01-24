@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/background.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Graphic/play_hoover.png" type="Texture" id=5]
 [ext_resource path="res://Graphic/Title.png" type="Texture" id=6]
 [ext_resource path="res://Sound/music_1_menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://Graphic/about.png" type="Texture" id=8]
 
 [node name="Node" type="Control"]
 
@@ -47,7 +48,7 @@ texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 
-[node name="TextureButton" type="TextureButton" parent="." index="2"]
+[node name="Play" type="TextureButton" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -102,8 +103,35 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="About" type="TextureButton" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 372.0
+margin_top = 1157.0
+margin_right = 715.0
+margin_bottom = 1273.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+_sections_unfolded = [ "Textures" ]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
 
 

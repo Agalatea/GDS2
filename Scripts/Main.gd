@@ -32,3 +32,7 @@ func _on_Timer_timeout():
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://Scenes/Main.tscn")
+
+
+func _on_About_pressed():
+	get_tree().change_scene("res://Scenes/About.tscn")
