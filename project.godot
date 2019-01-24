@@ -16,10 +16,12 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/width=720
+window/size/height=1280
 window/handheld/orientation="portrait"
 window/handheld/emulate_touchscreen=true
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="expand"
 
 [rendering]
 

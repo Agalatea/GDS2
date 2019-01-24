@@ -1,16 +1,14 @@
 extends Control
 
-const enemyscene = preload("res://Scenes/Enemy.tscn")
+var enemyscene = preload("res://Scenes/Enemy.tscn")
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$BGM.play()
 
-func _input(event):
-	if event is InputEventScreenTouch:
-		print("touch")
-		self.add_child(enemyscene.instance())
+#func _input(event):
+#	if event is InputEventScreenTouch:
+#		print("touch")
+		
 #EXMAPLE for later
 # if event is InputEventScreenDrag:
 #        if event.speed.y < -10:
@@ -26,3 +24,10 @@ func _input(event):
 #            self.state = FLY
 #            self.character_on_input_press_position = self.position
 #            self.get_tree().set_input_as_handled()
+
+func _on_Timer_timeout():
+	pass
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://Scenes/Enemy.tscn")

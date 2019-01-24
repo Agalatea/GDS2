@@ -20,7 +20,7 @@ func reset_enemy():
 	tween.reset_all()
 	tween.remove_all()
 
-	var sprite = get_node("Panel/Sprite")
+	var sprite = get_node("Panel/Area2D/Sprite")
 	var size = get_node("Panel").get_size()
 
 	
@@ -54,3 +54,14 @@ func reset_enemy():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	print ( string(event))
+	if event is InputEventScreenTouch:
+		print ("sprite" )
+		var sprite = get_node("Panel/Area2D/Sprite")
+		self.interpolate_method(sprite, "set_rotation_degrees", 0, 360, 2, state.trans, state.eases)
+		var size = get_node("Panel").get_size()
+		var pos = self.position
+		self.interpolate_method(sprite, "set_position", pos, Vector2(size.x+100, pos.y), 2, state.trans, state.eases)
