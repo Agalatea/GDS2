@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
 
 [display]
 
@@ -21,7 +25,18 @@ window/size/height=1280
 window/handheld/orientation="portrait"
 window/handheld/emulate_touchscreen=true
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
+
+[input]
+
+ui_touch=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Rock"
+2d_physics/layer_3="Border"
 
 [rendering]
 

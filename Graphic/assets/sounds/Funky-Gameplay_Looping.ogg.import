@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Funky-Gameplay_Looping.ogg-511499fc50e19d3e288da449ec26a795.oggstr"
+
+[deps]
+
+source_file="res://Graphic/assets/sounds/Funky-Gameplay_Looping.ogg"
+dest_files=[ "res://.import/Funky-Gameplay_Looping.ogg-511499fc50e19d3e288da449ec26a795.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

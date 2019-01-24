@@ -1,6 +1,7 @@
 extends Control
 
 var enemyscene = preload("res://Scenes/Enemy.tscn")
+var game_scene = preload("res://Scenes/Main.tscn")
 
 func _ready():
 	$BGM.play()
@@ -30,4 +31,4 @@ func _on_Timer_timeout():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Scenes/Enemy.tscn")
+	get_tree().change_scene("res://Scenes/Main.tscn")
