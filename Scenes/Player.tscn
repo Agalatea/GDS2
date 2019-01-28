@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/assets/player_ship.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/balloons/Assety_-16.png" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
@@ -15,11 +15,11 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 35.0146
+radius = 17.0918
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 115.409, 81.5952 )
+position = Vector2( 359.255, 701.232 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 2
@@ -35,7 +35,7 @@ max_speed = 600
 
 rotation = -0.0167412
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 animation = "default"
 _sections_unfolded = [ "Transform" ]
 

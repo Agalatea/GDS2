@@ -1,6 +1,6 @@
 extends Control
 
-var enemyscene = preload("res://Scenes/Enemy.tscn")
+
 var game_scene = preload("res://Scenes/Main.tscn")
 
 func _ready():

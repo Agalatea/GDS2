@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Bird.gd" type="Script" id=1]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_000.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_001.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_002.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_003.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 72.1679
+height = 43.6328
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 196.556, 93.5288 )
+
+[node name="Bird" type="KinematicBody2D"]
+
+input_pickable = true
+collision_layer = 2
+collision_mask = 4
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable" ]
+swipe_friction = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 4 )
+animation = "default"
+frame = 3
+playing = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="1"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -16.2847, 7.62939e-006 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TouchArea" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea" index="0"]
+
+shape = SubResource( 3 )
+
+[connection signal="input_event" from="." to="." method="_on_RockSwipe_input_event"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+
+[connection signal="input_event" from="TouchArea" to="." method="_on_TouchArea_input_event"]
+
+

@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Gamestate.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/assets/space_background.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/background/Assety_-08.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Rock.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/RockSwipe.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Borderd.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -39,7 +38,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 9.31787, -251.586 )
+position = Vector2( 11.3684, -251.586 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 centered = false
@@ -61,43 +60,22 @@ limit_left = 0
 editor_draw_limits = true
 _sections_unfolded = [ "Editor", "Limit" ]
 
-[node name="Rock" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Cloud" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 331.615, 275.843 )
+position = Vector2( 215.307, 498.283 )
 
-[node name="Rock2" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Bird" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 140.182, 459.739 )
+position = Vector2( 225.56, 112.78 )
 
-[node name="Rock3" parent="." index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 343.673, 595.399 )
-
-[node name="RockSwipe" parent="." index="5" instance=ExtResource( 6 )]
-
-position = Vector2( 236.06, 129.657 )
-rotation = 0.00293654
-
-[node name="StaticBody2D3" parent="." index="6" instance=ExtResource( 7 )]
-
-position = Vector2( 3.47508, 365.728 )
-rotation = -1.5589
-scale = Vector2( 4.07977, 1 )
-
-[node name="StaticBody2D4" parent="." index="7" instance=ExtResource( 7 )]
-
-position = Vector2( 464.446, 374.079 )
-rotation = -1.5589
-scale = Vector2( 4.07977, 1 )
-
-[node name="Obstacke_spawn_timer" type="Timer" parent="." index="8"]
+[node name="Obstacke_spawn_timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
 
-[node name="Obstackles" type="Node2D" parent="." index="9"]
+[node name="Obstackles" type="Node2D" parent="." index="5"]
 
 [connection signal="timeout" from="Obstacke_spawn_timer" to="." method="_on_Obstacke_spawn_timer_timeout"]
 
