@@ -38,6 +38,10 @@ ui_touch=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resourc
 2d_physics/layer_2="Rock"
 2d_physics/layer_3="Border"
 
+[physics]
+
+2d/default_gravity=0
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

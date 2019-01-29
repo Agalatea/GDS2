@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -51,7 +51,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 position = Vector2( 210.371, 661.921 )
 rotation = -0.00089705
-basic_speed = 200.0
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
 
