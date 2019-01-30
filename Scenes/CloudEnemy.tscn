@@ -1,30 +1,46 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/Bird.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_001.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_002.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/CloudEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/clouds/Assety_-02.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "cloud_dark",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "could_white_big",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "cloud_white",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "cloud_dark_big",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 72.1679
-height = 43.6328
+radius = 64.9985
+height = 126.675
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 379.387, 117.835 )
+extents = Vector2( 379.387, 77.6678 )
 
 [sub_resource type="Animation" id=4]
 
@@ -59,11 +75,13 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Bird" type="RigidBody2D" index="0"]
+[node name="Cloud" type="RigidBody2D" index="0" groups=[
+"Enemy",
+]]
 
 input_pickable = true
 collision_layer = 2
-collision_mask = 4
+collision_mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
@@ -71,8 +89,8 @@ bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 3
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
@@ -87,8 +105,7 @@ impulse_value_y = -15
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
-animation = "default"
-frame = 1
+animation = "could_white_big"
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="1"]
@@ -97,11 +114,9 @@ rect = Rect2( -10, -10, 20, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -16.2847, 7.62939e-006 )
+rotation = 1.5708
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Transform" ]
 
 [node name="TouchArea" type="Area2D" parent="." index="3"]
 
@@ -118,13 +133,17 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea" index="0"]
 
+position = Vector2( -1.47018, -1.36762 )
+scale = Vector2( 1, 0.911214 )
 shape = SubResource( 3 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 0, -0.174824 )
 
 [node name="Timer" parent="SwipeDetector" index="0"]
 
-wait_time = 0.13
+wait_time = 0.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
@@ -136,7 +155,9 @@ playback_speed = 1.0
 anims/Fade_out = SubResource( 4 )
 blend_times = [  ]
 
-[connection signal="input_event" from="." to="." method="_on_RockSwipe_input_event"]
+[connection signal="body_entered" from="." to="." method="_on_Cloud_body_entered"]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_Cloud_body_shape_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 

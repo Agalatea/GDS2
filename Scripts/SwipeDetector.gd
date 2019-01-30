@@ -34,12 +34,15 @@ func _end_detection(position):
 	#if swipe is diagonal
 	if abs(direction.x) + abs(direction.y) > MAX_DIAGONAL_SLOPE:
 		return #do nothing
+	if position == swipe_start_position:
+		return
 	
 	if abs(direction.x) > abs(direction.y): #horizontal swipe
 		emit_signal('swiped', Vector2(-sign(direction.x), 0.0))
 	else:
 		#may be not used by us
-		emit_signal('swiped', Vector2(0.0, -sign(direction.y))) #vertical swipe
+		#emit_signal('swiped', Vector2(0.0, -sign(direction.y))) #vertical swipe
+		return
 	
 
 func _on_Timer_timeout():

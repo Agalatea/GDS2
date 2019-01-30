@@ -35,7 +35,7 @@ ui_touch=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resourc
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Rock"
+2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Border"
 
 [physics]

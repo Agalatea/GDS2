@@ -30,6 +30,11 @@ func _physics_process(delta):
 	run()
 	if state in [States.ALIVE]:
 		move_and_slide(motion)
+		
+	#Colided with something	
+	if get_slide_count() > 0: 
+		var collision = get_slide_collision(0)
+		proces_border_collision(collision)
 	
 #	look_at(target)
 #	velocity = (target - position).normalized() * speed
@@ -37,6 +42,12 @@ func _physics_process(delta):
 #	if (target - position).length() > 5:
 #		#move_and_slide(velocity)
 #		pass
+
+#process collision with clouds
+func proces_border_collision(collision):
+	if(collision):
+		if collision.get_collider().is_in_group("Enemy") and state != States.DEAD:
+			end()
 
 func _process(delta):
 	if state == States.ALIVE:
@@ -46,3 +57,10 @@ func _process(delta):
 func increase_speed_over_time():
 	if (int(elapsed_time_alive) % time_increase) == 0 and basic_speed < max_speed:
 		basic_speed += speed_increase_factor
+
+
+func end():
+	state = States.DEAD
+	queue_free()
+	get_tree().change_scene(Global.GameOver)
+	

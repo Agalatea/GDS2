@@ -4,14 +4,14 @@
 [ext_resource path="res://Graphic/background/Assety_-08.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Bird.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/BirdEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CloudEnemy.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
-spawn_obstackle_timer = 2
+spawn_obstackle_timer = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
@@ -51,6 +51,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 position = Vector2( 210.371, 661.921 )
 rotation = -0.00089705
+basic_speed = 200.0
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
 
@@ -61,16 +62,16 @@ _sections_unfolded = [ "Editor", "Limit" ]
 
 [node name="Cloud" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 215.307, 498.283 )
+position = Vector2( 203.947, 296.067 )
 
 [node name="Bird" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 225.56, 112.78 )
+position = Vector2( 193.751, 3.71985 )
 
 [node name="Obstacke_spawn_timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.5
 one_shot = false
 autostart = true
 
