@@ -1,11 +1,11 @@
-extends Control
+extends CanvasLayer
 
 
 var game_scene = preload("res://Scenes/Main.tscn")
 
 func _ready():
 	$BGM.play()
-
+	$HBoxContainer/BestScore.text = str(Global.highscore)
 #func _input(event):
 #	if event is InputEventScreenTouch:
 #		print("touch")

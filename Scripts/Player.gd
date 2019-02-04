@@ -7,8 +7,10 @@ var state = null
 
 var motion = Vector2()
 export (float) var basic_speed = 0
+
 #how much speed increase over time
 export (float) var speed_increase_factor = 0
+#every time period that speed increase
 export (int) var time_increase = 1
 export (float) var max_speed = 600
 
@@ -20,7 +22,7 @@ func _ready():
 	state = ALIVE
 
 func run():
-	motion.y = - basic_speed
+	motion.y =- basic_speed
 
 #func _input(event):
 #    if event.is_action_pressed('click'):	
@@ -61,6 +63,7 @@ func increase_speed_over_time():
 
 func end():
 	state = States.DEAD
+	Global.sum_up_game()
 	queue_free()
 	get_tree().change_scene(Global.GameOver)
 	

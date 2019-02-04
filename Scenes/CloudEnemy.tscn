@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/CloudEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/clouds/Assety_-02.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -17,24 +16,24 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "could_white_big",
+"name": "cloud_white",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "cloud_white",
+"name": "cloud_dark_big",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "cloud_dark_big",
+"name": "could_white_big",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 64.9985
+radius = 54.1643
 height = 126.675
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -75,7 +74,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Cloud" type="RigidBody2D" index="0" groups=[
+[node name="Cloud" type="RigidBody2D" groups=[
 "Enemy",
 ]]
 
@@ -114,6 +113,7 @@ rect = Rect2( -10, -10, 20, 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
+position = Vector2( -1.7605, -6.60193 )
 rotation = 1.5708
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -137,7 +137,7 @@ position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
 shape = SubResource( 3 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 6 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 0, -0.174824 )
 

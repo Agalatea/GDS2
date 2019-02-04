@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Scripts/About.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/background.png" type="Texture" id=2]
-[ext_resource path="res://Fonts/LuckiestGuy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Graphic/Fonts/LuckiestGuy.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Graphic/back.png" type="Texture" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 

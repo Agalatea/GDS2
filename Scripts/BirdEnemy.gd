@@ -1,16 +1,17 @@
 extends Area2D
 
 var dying = false
-
+export (int) var falling_speed  = 100
 
 func _ready():
-	pass
+	$AnimationPlayer.play("fly")
 	
-func init(pos):
-	global_position = pos
+
 
 func _process(delta):
-	pass
+	if dying:
+		global_position.y += falling_speed * delta
+		$Sprite.play("die")
 
 
 func destroy():
@@ -23,7 +24,9 @@ func _input_event(viewport, event, shape_idx):
 		$CollisionPolygon2D.disabled = true
 		$AnimationPlayer.play("fade_out")
 
-func _on_RockTap_body_entered(body):
+
+
+func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		Global.Player.end()
 		queue_free() #death anim

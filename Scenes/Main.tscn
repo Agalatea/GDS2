@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Gamestate.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/background/Assety_-08.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/BirdEnemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/CloudEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -49,8 +49,9 @@ _sections_unfolded = [ "Offset", "Transform" ]
 "Player",
 ] instance=ExtResource( 3 )]
 
-position = Vector2( 210.371, 661.921 )
+position = Vector2( 210.371, 0 )
 rotation = -0.00089705
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
 basic_speed = 200.0
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
@@ -60,23 +61,19 @@ limit_left = 0
 editor_draw_limits = true
 _sections_unfolded = [ "Editor", "Limit" ]
 
-[node name="Cloud" parent="." index="2" instance=ExtResource( 5 )]
+[node name="Enemy" type="Node2D" parent="." index="2"]
 
-position = Vector2( 203.947, 296.067 )
+[node name="Bird" parent="Enemy" index="0" instance=ExtResource( 5 )]
 
-[node name="Bird" parent="." index="3" instance=ExtResource( 6 )]
+position = Vector2( 190.164, -817.388 )
 
-position = Vector2( 193.751, 3.71985 )
+[node name="EnemySpawner" parent="." index="3" instance=ExtResource( 6 )]
 
-[node name="Obstacke_spawn_timer" type="Timer" parent="." index="4"]
+editor/display_folded = true
+spawn_obstackle_timer = 1
 
-process_mode = 1
-wait_time = 0.5
-one_shot = false
-autostart = true
-
-[node name="Obstackles" type="Node2D" parent="." index="5"]
-
-[connection signal="timeout" from="Obstacke_spawn_timer" to="." method="_on_Obstacke_spawn_timer_timeout"]
+[connection signal="spawn_enemy" from="EnemySpawner" to="." method="_on_EnemySpawner_spawn_enemy"]
 
 
+[editable path="Player/Camera2D"]
+[editable path="EnemySpawner"]

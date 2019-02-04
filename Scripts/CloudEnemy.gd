@@ -7,18 +7,18 @@ export (float) var impulse_value_y = -15
 
 var dying = false
 
-var CloudTypes = ["cloud_white", "cloud_white_big", "cloud_dark", "cloud_dark_big"]
+onready var CloudTypes = ["cloud_dark", "cloud_white", "cloud_dark_big"] #coś jest nie tak z white cloud
 
 func init(pos):
 	global_position = pos
+	var cloud_sprite = CloudTypes[randi() % CloudTypes.size()]
+	$AnimatedSprite.play(cloud_sprite)
+	
+
+func ready():
 	randomize()
 	
 
-
-func ready():
-	$AnimatedSprite.play(CloudTypes[randi() % CloudTypes.size()])
-	
-	
 func _process(delta):
 	pass
 

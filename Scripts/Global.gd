@@ -4,10 +4,11 @@ extends Node
 
 var Player
 var Gamestate
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var GUI
 
+
+var score_file = "user://highscore.txt"
+var highscore = 0
 
 
 # GLOBAL PATH TO RELEVANT SCENES - MUST BE CHANGED MANNUALLY
@@ -17,11 +18,26 @@ var GameOver = "res://Scenes/GameOver.tscn"
 var About = "res://Scenes/About.tscn"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	setup()
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func setup():
+	var f = File.new()
+	if f.file_exists(score_file):
+		f.open(score_file, File.READ)
+		var content = f.get_as_text()
+		highscore = int(content)
+		f.close()
+		
+func sum_up_game():
+	if Global.Gamestate.current_score > highscore:
+		highscore = Global.Gamestate.current_score
+		save_score()
+
+func save_score():
+	var f = File.new()
+	f.open(score_file, File.WRITE)
+	f.store_string(str(Global.Gamestate.current_score))
+	f.close()
+
+
+

@@ -1,17 +1,24 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/BirdEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_001.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_003.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_002.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BirdEnemy.gd" type="Script" id=2]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_000.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_001.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_003.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_002.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Bird/die/Bird_die__Bird_die_001.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "die",
 "speed": 5.0
 } ]
 
@@ -48,32 +55,69 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Bird" type="Area2D"]
+[sub_resource type="Animation" id=3]
+
+resource_name = "fly"
+length = 4.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 200, 0 ), Vector2( -200, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[node name="Bird" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Visibility" ]
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+falling_speed = 100
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
 
 build_mode = 0
 polygon = PoolVector2Array( 39.4335, -3.27835, 94.8898, 28.4109, 47.3558, 27.9708, 68.4821, 84.3074, -0.178131, 25.33, -10.7412, 24.8899, -27.9063, 68.4627, -41.5503, 52.6181, -59.5956, 70.6634, -59.1555, 28.8511, -39.3496, 26.6504, -22.1846, -2.83823, 7.30408, -25.725, 38.1131, -38.4887, 56.1584, -23.5243, 59.6794, -12.5211, 46.4756, -14.7217 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -81,8 +125,9 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/fade_out = SubResource( 2 )
+anims/fly = SubResource( 3 )
 blend_times = [  ]
 
-[connection signal="body_entered" from="." to="." method="_on_RockTap_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 
 
