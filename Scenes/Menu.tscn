@@ -58,6 +58,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
+stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="Play" type="TextureButton" parent="." index="2"]

@@ -27,7 +27,9 @@ func update_GUI():
 		
 func calculate_score(delta):
 	#TODO MAKE IT BETTER
-	current_score =  int(- int(Global.Player.global_position.y) * 0.8 * delta)
+	var score = int(- int(Global.Player.global_position.y) * 0.8 * delta)
+	if score % 2 == 0:
+		current_score =  score
 
 
 
