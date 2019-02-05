@@ -5,6 +5,7 @@ export var spawn_obstackle_timer = 2
 
 var TapEnemy = preload("res://Scenes/BirdEnemy.tscn")
 var SwipeEnemy = preload("res://Scenes/CloudEnemy.tscn")
+var SwipeEnemy_storm = preload("res://Scenes/StormCloud.tscn")
 
 var screen_size_x 
 var screen_size_y
@@ -12,7 +13,7 @@ var screen_size_y
 signal spawn_enemy()
 
 
-onready var enemys = [TapEnemy, SwipeEnemy]
+onready var enemys = [TapEnemy, SwipeEnemy, SwipeEnemy_storm]
 
 func _ready():
 	$Timer.wait_time = spawn_obstackle_timer

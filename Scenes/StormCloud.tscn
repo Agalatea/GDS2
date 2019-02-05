@@ -1,35 +1,23 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/CloudEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/StormCloudEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "cloud_white",
+"name": "storm1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "cloud_dark_big",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "cloud_dark",
+"name": "storm2",
 "speed": 5.0
 } ]
-
-[sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 54.1643
-height = 126.675
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -69,7 +57,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Cloud" type="RigidBody2D" groups=[
+[node name="StormCloud" type="RigidBody2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -93,25 +81,24 @@ angular_velocity = 0.0
 angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Pickable", "Visibility" ]
-impulse_value_x = 400.0
+impulse_value_x = 250
 impulse_value_y = -15
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 1.08072, 27.5584 )
 frames = SubResource( 1 )
-animation = "cloud_dark"
+animation = "storm1"
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="1"]
 
 rect = Rect2( -10, -10, 20, 20 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
-position = Vector2( -1.7605, -6.60193 )
-rotation = 1.5708
-shape = SubResource( 2 )
-_sections_unfolded = [ "Transform" ]
+build_mode = 0
+polygon = PoolVector2Array( -15.6782, 141.231, -6.87567, 95.4583, -22.7202, 93.2576, -8.19604, 40.0023, -35.4839, 38.6819, -70.694, 21.9571, -98.8622, 28.1189, -118.668, -1.36961, -96.6615, -24.6963, -80.817, -23.8161, -76.4157, -51.544, -57.4902, -58.5861, -41.2056, -58.146, -24.0406, -84.1134, 3.68738, -92.4758, 33.616, -76.6313, 39.7777, -58.146, 60.9038, -59.0262, 84.6707, -45.3823, 83.7904, -20.2951, 95.6738, -22.9358, 111.518, -14.1333, 121.641, 6.55267, 108.878, 23.7176, 92.593, 28.1189, 72.3471, 21.9571, 65.3051, 32.5201, 37.137, 40.4424, 16.8912, 38.2418, 1.0466, 75.2124, 27.0141, 74.7723 )
 
 [node name="TouchArea" type="Area2D" parent="." index="3"]
 
@@ -132,7 +119,7 @@ position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
 shape = SubResource( 3 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -0.174824 )
 
@@ -150,7 +137,7 @@ playback_speed = 1.0
 anims/Fade_out = SubResource( 4 )
 blend_times = [  ]
 
-[connection signal="body_entered" from="." to="." method="_on_Cloud_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_StormCloud_body_entered"]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Cloud_body_shape_entered"]
 

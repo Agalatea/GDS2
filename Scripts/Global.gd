@@ -17,6 +17,9 @@ var Main = "res://Scenes/Main.tscn"
 var GameOver = "res://Scenes/GameOver.tscn"
 var About = "res://Scenes/About.tscn"
 
+# TODO add references to scenes that will spown somewhere
+
+
 func _ready():
 	setup()
 
