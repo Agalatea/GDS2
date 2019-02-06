@@ -9,17 +9,25 @@ var motion = Vector2()
 export (float) var basic_speed = 0
 
 #how much speed increase over time
-export (float) var speed_increase_factor = 0
+export (float) var speed_increase_factor = 0.02
 #every time period that speed increase
 export (int) var time_increase = 1
+# max movement speed
 export (float) var max_speed = 600
+#every time the pig will look up
+export var look_up_time = 5
+
+export (int) var min_look_up_value = 3
+export (int) var max_look_up_value = 10
 
 var elapsed_time_alive = 0
 
 
 func _ready():
+	randomize()
 	Global.Player = self 
 	state = ALIVE
+	$LookUpTimer.wait_time = look_up_time
 
 func run():
 	motion.y =- basic_speed
@@ -67,3 +75,12 @@ func end():
 	queue_free()
 	get_tree().change_scene(Global.GameOver)
 	
+
+func _on_LookUpTimer_timeout():
+	$Sprite.play("lookup")
+	look_up_time = rand_range(min_look_up_value, max_look_up_value)
+
+func _on_Sprite_animation_finished():
+	if $Sprite.animation == "lookup":
+		$Sprite.play("idle")
+		$LookUpTimer.wait_time = look_up_time

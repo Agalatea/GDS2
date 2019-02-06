@@ -59,7 +59,7 @@ tracks/1/keys = {
 
 resource_name = "fly"
 length = 4.0
-loop = false
+loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -86,7 +86,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[node name="Bird" type="Node2D"]
+[node name="Bird" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
@@ -108,7 +108,6 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 

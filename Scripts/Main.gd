@@ -6,6 +6,7 @@ var game_scene = preload("res://Scenes/Main.tscn")
 func _ready():
 	$BGM.play()
 	$HBoxContainer/BestScore.text = str(Global.highscore)
+	$HBoxContainer2/SumScore.text = str(Global.sum_score)
 #func _input(event):
 #	if event is InputEventScreenTouch:
 #		print("touch")
@@ -36,3 +37,6 @@ func _on_TextureButton_pressed():
 
 func _on_About_pressed():
 	get_tree().change_scene("res://Scenes/About.tscn")
+
+func _on_Exit_pressed():
+	get_tree().quit()

@@ -1,13 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=12]
+[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=13]
+[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -15,6 +21,11 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "lookup",
 "speed": 5.0
 } ]
 
@@ -28,16 +39,21 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "collision" ]
 basic_speed = 0
-speed_increase_factor = 0
+speed_increase_factor = 0.02
 time_increase = 1
 max_speed = 600
+look_up_time = 5
+min_look_up_value = 3
+max_look_up_value = 10
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( -15.9999, -17 )
 rotation = -0.0167412
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "idle"
+playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ballons" type="Node2D" parent="." index="1"]
@@ -47,32 +63,32 @@ editor/display_folded = true
 [node name="Sprite" type="Sprite" parent="Ballons" index="0"]
 
 position = Vector2( -41.5151, -151.62 )
-texture = ExtResource( 3 )
+texture = ExtResource( 9 )
 
 [node name="Sprite2" type="Sprite" parent="Ballons" index="1"]
 
 position = Vector2( 6.31757, -161.548 )
-texture = ExtResource( 4 )
+texture = ExtResource( 10 )
 
 [node name="Sprite3" type="Sprite" parent="Ballons" index="2"]
 
 position = Vector2( -3.60999, -113.715 )
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
 
 [node name="Sprite4" type="Sprite" parent="Ballons" index="3"]
 
 position = Vector2( 53.2476, -140.79 )
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="Sprite5" type="Sprite" parent="Ballons" index="4"]
 
 position = Vector2( 46.0276, -106.495 )
-texture = ExtResource( 7 )
+texture = ExtResource( 13 )
 
 [node name="Sprite6" type="Sprite" parent="Ballons" index="5"]
 
 position = Vector2( -41.5151, -103.788 )
-texture = ExtResource( 8 )
+texture = ExtResource( 14 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
@@ -143,5 +159,16 @@ default_color = Color( 0.976563, 0.976563, 0.976563, 1 )
 texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
+
+[node name="LookUpTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 7.0
+one_shot = false
+autostart = true
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+
+[connection signal="timeout" from="LookUpTimer" to="." method="_on_LookUpTimer_timeout"]
 
 

@@ -5,7 +5,9 @@
 [node name="EnemySpawner" type="Node2D"]
 
 script = ExtResource( 1 )
-spawn_obstackle_timer = 2
+spawn_obstackle_timer = 1
+spawn_obstackle_limit = 0.4
+update_sawn_time_timer = 5
 
 [node name="Timer" type="Timer" parent="." index="0"]
 
@@ -14,6 +16,17 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
+[node name="UpdateSpawnTimeTimer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="update_timer" from="." to="." method="_on_EnemySpawner_update_timer"]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="timeout" from="UpdateSpawnTimeTimer" to="." method="_on_UpdateSpawnTimeTimer_timeout"]
 
 
