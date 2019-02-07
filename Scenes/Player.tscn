@@ -98,8 +98,6 @@ polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -23.8842, -17
 
 [node name="Lines" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Line2D" type="Line2D" parent="Lines" index="0"]
 
 rotation = -2.85962

@@ -64,9 +64,6 @@ position = Vector2( 210.371, 0 )
 rotation = -0.00089705
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
 basic_speed = 200.0
-look_up_time = 5
-min_look_up_value = 3
-max_look_up_value = 10
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 6 )]
 
