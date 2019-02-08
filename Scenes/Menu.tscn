@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=19]
 [ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -287,7 +288,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 7
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -393,7 +394,12 @@ round_precision = 8
 
 [node name="BackgroundSound" parent="." index="10" instance=ExtResource( 21 )]
 
-position = Vector2( 448.517, 1112.89 )
+position = Vector2( 428.104, 1115.41 )
+scale = Vector2( 0.929846, 1 )
+
+[node name="EffectsSound" parent="." index="11" instance=ExtResource( 22 )]
+
+position = Vector2( 551.34, 1122.82 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

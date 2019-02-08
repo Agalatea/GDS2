@@ -4,7 +4,6 @@ extends CanvasLayer
 var game_scene = preload("res://Scenes/Main.tscn")
 
 func _ready():
-	$BGM.play()
 	$HBoxContainer/BestScore.text = str(Global.highscore)
 	$HBoxContainer2/SumScore.text = str(Global.sum_score)
 #func _input(event):

@@ -1,17 +1,14 @@
 extends Node2D
 
 
-var sound_on
-var sound_off
-
 func _ready():
 	Global.BackgroundSound = self 
 	if(Global.background_sound == "on"):
 		$bgm_button.pressed = false
-		$BGM.play()
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), false)  
 	else:
 		$bgm_button.pressed = true
-		$BGM.stop()
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("BGM"), true)  
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

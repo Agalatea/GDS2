@@ -6,6 +6,7 @@ var Player
 var Gamestate
 var GUI
 var BackgroundSound
+var EffectsSound
 
 
 var score_file = "user://highscore.txt"
