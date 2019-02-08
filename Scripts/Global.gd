@@ -5,12 +5,15 @@ extends Node
 var Player
 var Gamestate
 var GUI
+var BackgroundSound
 
 
 var score_file = "user://highscore.txt"
 var highscore = 0
 var sum_score = 0
-var values_from_file
+var background_sound = "on"
+var effects_sound = "on"
+var values_from_file = {}
 
 # GLOBAL PATH TO RELEVANT SCENES - MUST BE CHANGED MANNUALLY
 var Menu = "res://Scenes/Menu.tscn"
@@ -30,10 +33,12 @@ func setup():
 		f.open(score_file, File.READ)
 		var content = f.get_as_text()
 		if not content:
-			values_from_file = ["0","0"]
+			content =  "0,0,on,on"
 		values_from_file = content.split(",")
-		highscore = int(values_from_file[0])#int(content[0])
+		highscore = int(values_from_file[0])
 		sum_score = int(values_from_file[1])
+		background_sound = str(values_from_file[2])
+		effects_sound = str (values_from_file[3])
 		f.close()
 		
 func sum_up_game():
@@ -43,18 +48,25 @@ func sum_up_game():
 		save_highscore()
 	save_add_score()
 
+func save_background_sound(status):
+	background_sound = status
+	save()
+
+func save_effects_sound(status):
+	effects_sound = status
+	save()
+
 func save_highscore():
-	var f = File.new()
-	f.open(score_file, File.WRITE)
-	f.store_string(str(highscore) +","+ str(sum_score))
-	f.close()
+	save()
 
 func save_add_score():
+	save()
+
+func save():
 	var f = File.new()
 	f.open(score_file, File.WRITE)
-	f.store_string(str(highscore) +","+ str(sum_score))
+	f.store_string(str(highscore) +","+ str(sum_score)+","+background_sound+","+effects_sound)
 	f.close()
-	
 
 
 	
