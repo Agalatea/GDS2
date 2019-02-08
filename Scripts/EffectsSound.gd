@@ -8,8 +8,10 @@ func _ready():
 	Global.EffectsSound = self 
 	if(Global.effects_sound == "on"):
 		$effects_btn.pressed = false
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Effects"), false)  
 	else:
 		$effects_btn.pressed = true
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Effects"), true) 
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
