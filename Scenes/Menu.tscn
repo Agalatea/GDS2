@@ -89,10 +89,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 262.0
-margin_top = 384.0
-margin_right = 506.0
-margin_bottom = 504.0
+margin_left = 166.0
+margin_top = 324.0
+margin_right = 541.0
+margin_bottom = 512.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -114,10 +114,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 390.0
-margin_top = 635.0
-margin_right = 562.0
-margin_bottom = 755.0
+margin_left = 295.0
+margin_top = 1148.0
+margin_right = 467.0
+margin_bottom = 1268.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -138,10 +138,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 1140.0
-margin_right = 249.0
-margin_bottom = 1258.0
+margin_left = 64.0
+margin_top = 1153.0
+margin_right = 303.0
+margin_bottom = 1271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -288,7 +288,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 5
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -394,12 +394,12 @@ round_precision = 8
 
 [node name="BackgroundSound" parent="." index="10" instance=ExtResource( 21 )]
 
-position = Vector2( 428.104, 1115.41 )
+position = Vector2( 523.395, 1154.19 )
 scale = Vector2( 0.929846, 1 )
 
 [node name="EffectsSound" parent="." index="11" instance=ExtResource( 22 )]
 
-position = Vector2( 551.34, 1122.82 )
+position = Vector2( 601.202, 1158.28 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

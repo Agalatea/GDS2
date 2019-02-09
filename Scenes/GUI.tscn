@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Graphic/fonty-score/CALIBRIB.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Theme" id=1]
 
@@ -32,7 +34,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -119,5 +121,13 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="BackgroundSound" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 541.992, 1168.35 )
+
+[node name="EffectsSound" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 616.172, 1171.44 )
 
 
