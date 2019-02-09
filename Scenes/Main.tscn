@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -47,9 +47,9 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="StartingBackground" type="Sprite" parent="." index="1"]
 
-position = Vector2( 251.116, -264.11 )
-scale = Vector2( 1.00368, 1.47397 )
+position = Vector2( 251.116, -116.325 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="Enemy" type="Node2D" parent="." index="2"]
 
