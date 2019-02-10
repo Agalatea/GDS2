@@ -15,7 +15,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameOver" type="CanvasLayer" index="0"]
+[node name="GameOver" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -64,9 +64,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 99.0
-margin_top = 135.0
+margin_top = 137.0
 margin_right = 621.0
-margin_bottom = 1144.0
+margin_bottom = 1142.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -77,7 +77,6 @@ alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -164,13 +163,14 @@ stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 755.0
 margin_right = 522.0
-margin_bottom = 1009.0
+margin_bottom = 1005.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -187,7 +187,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 91.0
 margin_right = 430.0
-margin_bottom = 254.0
+margin_bottom = 250.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -202,9 +202,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 2.0
 margin_right = 339.0
-margin_bottom = 125.0
+margin_bottom = 123.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -226,9 +225,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 129.0
+margin_top = 127.0
 margin_right = 339.0
-margin_bottom = 252.0
+margin_bottom = 250.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

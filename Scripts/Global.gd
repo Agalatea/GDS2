@@ -26,7 +26,7 @@ var About = "res://Scenes/About.tscn"
 # TODO add references to scenes that will spawn somewhere
 var background_first = preload("res://Graphic/baground/Assety_-08.png")
 var background_second = preload("res://Graphic/baground/Assety_-09.png")
-var background_black = preload("res://Graphic/baground/Assety_-10.png")
+var background_third = preload("res://Graphic/baground/Assety_-10.png")
 
 func _ready():
 	setup()

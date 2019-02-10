@@ -7,11 +7,12 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
 spawn_obstackle_timer = 1
+score_background_change_limit = 20
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 

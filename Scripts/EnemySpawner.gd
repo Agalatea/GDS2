@@ -7,21 +7,28 @@ export var spawn_obstackle_limit = 0.4
 #every x (now 5) sec update enemy spawner timer
 export var update_sawn_time_timer = 5
 
+
 var current_spawn_timer = 0
 var spawn_timer_offset = 0
+var spawn_limit_position = 100 # how far from left and right screen corner enemies will spawn
 
 var TapEnemy = preload("res://Scenes/BirdEnemy.tscn")
 var SwipeEnemy = preload("res://Scenes/CloudEnemy.tscn")
 var SwipeEnemy_storm = preload("res://Scenes/StormCloud.tscn")
+var SwipeEnemy_ufo = 0
+var TapEnemy_plane = 0
 
 var screen_size_x 
 var screen_size_y
 
 signal spawn_enemy
 signal update_timer
+#This array shoudl be changed when we want to display different 
+var current_enemies = []
 
-
-onready var enemys = [TapEnemy, SwipeEnemy, SwipeEnemy_storm]
+onready var enemys_first = [TapEnemy, SwipeEnemy, SwipeEnemy_storm]
+#enemy_2 background
+#enemy 3 bakcground
 
 func _process(delta):
 	spawn_timer_offset = recalculate_spawn_timer(Global.Player.basic_speed)
@@ -43,22 +50,26 @@ func _ready():
 	current_spawn_timer = spawn_obstackle_timer
 	screen_size_x = get_viewport().size.x
 	screen_size_y = get_viewport().size.y
+	current_enemies = enemys_first
 	
 func spawn_enemy():
 	#Spawn random obstackle in front of the player above camera
 	
 	randomize()
-	var rand_enemy = enemys[randi() % enemys.size()]
+	var rand_enemy = enemys_first[randi() % enemys.size()]
 	#print(rand_obstackle)
 	
 	var player_pos = Global.Player.global_position
 	var spawn_pos = Vector2()
 	spawn_pos.y = player_pos.y - screen_size_y
-	spawn_pos.x = rand_range(player_pos.x - screen_size_x*0.6, player_pos.x + screen_size_x*0.6)
+	spawn_pos.x = clamp(
+				rand_range(player_pos.x - screen_size_x*0.6, player_pos.x + screen_size_x*0.6),
+				spawn_limit_position,
+				screen_size_x - spawn_limit_position)
 	if rand_enemy:
 		var enemy = rand_enemy.instance()
 		Global.Gamestate.get_node('Enemy').add_child(enemy)
-
+		
 		enemy.init(spawn_pos)
 	
 func _on_Timer_timeout():

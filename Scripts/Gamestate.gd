@@ -3,9 +3,15 @@ extends Node2D
 var current_score = 0
 
 export var spawn_obstackle_timer = 2
+# above that score background shoudl change
+export var score_background_change_limit = 20
 var screen_size_x 
 var screen_size_y
 onready var GUI = Global.GUI
+
+
+
+var backgrounds = [Global.background_first, Global.background_second, Global.background_third]
 
 func _ready():
 	Global.Gamestate = self
@@ -18,6 +24,13 @@ func _ready():
 func _process(delta):
 	calculate_score(delta)
 	update_GUI()
+	#HARD CODED BACKGROUND CHANGE, NEEDS TO BE MORE SMOOTH 
+	if current_score > score_background_change_limit:
+		change_background(1)
+		#send signal to mayby change enemies
+	if current_score > score_background_change_limit*2:
+		change_background(2)
+		#send signal to mayby change enemies
 	
 func _on_EnemySpawner_spawn_enemy():
 	$EnemySpawner.spawn_enemy()
@@ -34,6 +47,8 @@ func calculate_score(delta):
 	if (score > current_score):
 		current_score =  int(score)
 
-
+func change_background(index):
+	if index < backgrounds.size():
+		$ParallaxBackground/ParallaxLayer/Background.texture = backgrounds[index]
 
 
