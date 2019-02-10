@@ -159,7 +159,6 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="5"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -288,7 +287,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 4
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 

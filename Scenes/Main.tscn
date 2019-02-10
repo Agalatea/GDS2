@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=6]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -39,7 +39,7 @@ _sections_unfolded = [ "Motion" ]
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 position = Vector2( 11.3684, -251.586 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.03, 1 )
 texture = ExtResource( 2 )
 centered = false
 offset = Vector2( -20, 0 )

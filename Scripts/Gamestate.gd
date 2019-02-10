@@ -11,6 +11,9 @@ func _ready():
 	Global.Gamestate = self
 	screen_size_x = get_viewport().size.x
 	screen_size_y = get_viewport().size.y
+	$ParallaxBackground/ParallaxLayer/Background.texture = Global.background_first
+	Global.sesion_score = 0
+	
 
 func _process(delta):
 	calculate_score(delta)

@@ -5,7 +5,7 @@ extends CanvasLayer
 # var b = "textvar"
 
 func _ready():
-	pass
+	$CenterContainer/VBoxContainer/HBoxContainer/Score.text = str(Global.sesion_score)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -14,4 +14,8 @@ func _ready():
 
 
 func _on_Back_pressed():
-	get_tree().change_scene("res://Scenes/Menu.tscn")
+	get_tree().change_scene(Global.Menu)
+
+
+func _on_PlayAgain_pressed():
+	get_tree().change_scene(Global.Main)

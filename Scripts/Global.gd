@@ -12,6 +12,7 @@ var EffectsSound
 var score_file = "user://highscore.txt"
 var highscore = 0
 var sum_score = 0
+var sesion_score = 0
 var background_sound = "on"
 var effects_sound = "on"
 var values_from_file = {}
@@ -24,8 +25,9 @@ var About = "res://Scenes/About.tscn"
 
 # TODO add references to scenes that will spawn somewhere
 var background_first = preload("res://Graphic/baground/Assety_-08.png")
-var background_second = preload("res://Graphic/baground/Assety_-09.png"
+var background_second = preload("res://Graphic/baground/Assety_-09.png")
 var background_black = preload("res://Graphic/baground/Assety_-10.png")
+
 func _ready():
 	setup()
 
@@ -44,6 +46,7 @@ func setup():
 		f.close()
 		
 func sum_up_game():
+	sesion_score = Global.Gamestate.current_score
 	sum_score += Global.Gamestate.current_score
 	if Global.Gamestate.current_score > highscore:
 		highscore = Global.Gamestate.current_score
