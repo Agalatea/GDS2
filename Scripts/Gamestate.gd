@@ -26,10 +26,10 @@ func update_GUI():
 		
 		
 func calculate_score(delta):
-	#TODO MAKE IT BETTER
-	var score = int(- int(Global.Player.global_position.y) * 0.8 * delta)
+	#Liniear function of height
+	var score = 0.01 * int(abs(Global.Player.global_position.y)) 
 	if (score > current_score):
-		current_score =  score
+		current_score =  int(score)
 
 
 
