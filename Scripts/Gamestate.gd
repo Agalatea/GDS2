@@ -11,7 +11,7 @@ onready var GUI = Global.GUI
 
 
 
-var backgrounds = [Global.background_first, Global.background_second, Global.background_third]
+var backgrounds = [Global.background_first, Global.background_first_mid_second, Global.background_second, Global.background_second_mid_third, Global.background_third]
 
 func _ready():
 	Global.Gamestate = self
@@ -28,9 +28,13 @@ func _process(delta):
 	if current_score > score_background_change_limit:
 		change_background(1)
 		#send signal to mayby change enemies
-	if current_score > score_background_change_limit*2:
+	if current_score > score_background_change_limit+2:
 		change_background(2)
+	if current_score > score_background_change_limit*2:
+		change_background(3)
 		#send signal to mayby change enemies
+	if current_score > score_background_change_limit*2+2:
+		change_background(4)
 	
 func _on_EnemySpawner_spawn_enemy():
 	$EnemySpawner.spawn_enemy()

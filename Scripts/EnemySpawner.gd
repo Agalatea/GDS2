@@ -56,7 +56,7 @@ func spawn_enemy():
 	#Spawn random obstackle in front of the player above camera
 	
 	randomize()
-	var rand_enemy = enemys_first[randi() % enemys.size()]
+	var rand_enemy = enemys_first[randi() % enemys_first.size()]
 	#print(rand_obstackle)
 	
 	var player_pos = Global.Player.global_position
