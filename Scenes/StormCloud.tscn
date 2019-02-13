@@ -1,30 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/StormCloudEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_000.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "storm1",
+"name": "storm2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "storm2",
+"name": "storm1",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 379.387, 77.6678 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Fade_out"
 length = 2.0
@@ -117,9 +119,9 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 4 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -0.174824 )
 
@@ -134,7 +136,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Fade_out = SubResource( 4 )
+anims/Fade_out = SubResource( 3 )
 blend_times = [  ]
 
 [connection signal="body_entered" from="." to="." method="_on_StormCloud_body_entered"]

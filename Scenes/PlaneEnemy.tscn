@@ -1,22 +1,21 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/BirdEnemy.gd" type="Script" id=2]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_000.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_001.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_003.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/Bird/Bird__Bird_fly_002.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/Bird/die/Bird_die__Bird_die_001.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/PlaneEnemy.gd" type="Script" id=2]
+[ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_003.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_000.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_001.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Bird/die/Bird_die__Bird_die_001.png" type="Texture" id=6]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "die",
 "speed": 5.0
@@ -86,13 +85,19 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[node name="Bird" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 101.558, 80.5628 )
+
+[node name="Plane" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( -2.72076, 1.36038 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -106,18 +111,12 @@ falling_speed = 100
 
 [node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
 
-frames = SubResource( 1 )
+frames = SubResource( 5 )
 animation = "idle"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
-
-build_mode = 0
-polygon = PoolVector2Array( 39.4335, -3.27835, 94.8898, 28.4109, 47.3558, 27.9708, 68.4821, 84.3074, -0.178131, 25.33, -10.7412, 24.8899, -27.9063, 68.4627, -41.5503, 52.6181, -59.5956, 70.6634, -59.1555, 28.8511, -39.3496, 26.6504, -22.1846, -2.83823, 7.30408, -25.725, 38.1131, -38.4887, 56.1584, -23.5243, 59.6794, -12.5211, 46.4756, -14.7217 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="1"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -127,6 +126,10 @@ playback_speed = 1.0
 anims/fade_out = SubResource( 2 )
 anims/fly = SubResource( 3 )
 blend_times = [  ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="2"]
+
+shape = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 

@@ -16,6 +16,8 @@ var sesion_score = 0
 var background_sound = "on"
 var effects_sound = "on"
 var values_from_file = {}
+var screen_size_x = 0
+var screen_size_y = 0
 
 # GLOBAL PATH TO RELEVANT SCENES - MUST BE CHANGED MANNUALLY
 var Menu = "res://Scenes/Menu.tscn"
@@ -31,6 +33,8 @@ var background_second_mid_third = preload("res://Graphic/baground/Assety_-55.png
 var background_third = preload("res://Graphic/baground/Assety_-10.png")
 
 func _ready():
+	screen_size_x = get_viewport().size.x
+	screen_size_y = get_viewport().size.y
 	setup()
 
 func setup():
