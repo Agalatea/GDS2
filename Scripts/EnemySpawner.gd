@@ -7,6 +7,14 @@ export var spawn_obstackle_limit = 0.4
 #every x (now 5) sec update enemy spawner timer
 export var update_sawn_time_timer = 5
 
+export var tap_enemies_p1 = 1
+export var swipe_enemy_cloud_p1 = 1
+export var swipe_enemy_storm_p1 = 1
+export var tap_enemies_p2 = 1
+export var swipe_enemy_cloud_p2 = 1
+export var swipe_enemy_storm_p2 = 1
+
+
 
 var current_spawn_timer = 0
 var spawn_timer_offset = 0
@@ -27,9 +35,9 @@ signal update_timer
 #This array shoudl be changed when we want to display different 
 var current_enemies = []
 
-onready var enemies_first = [TapEnemy_bird, SwipeEnemy_cloud, SwipeEnemy_storm]
-#enemy_2 background
-onready var enemies_second = [SwipeEnemy_cloud, SwipeEnemy_storm, TapEnemy_plane]
+onready var enemies_first = []
+#enemy_2 background TapEnemy_bird, SwipeEnemy_cloud, SwipeEnemy_storm
+onready var enemies_second = []
 ##enemy 3 bakcground
 onready var enemies_third = [TapEnemy_ufo]
 
@@ -52,6 +60,24 @@ func _ready():
 	current_spawn_timer = spawn_obstackle_timer
 	screen_size_x = get_viewport().size.x
 	screen_size_y = get_viewport().size.y
+	for i in range(0, tap_enemies_p1):
+		enemies_first.append(TapEnemy_bird)
+		i=i+1
+	for j in range(0, swipe_enemy_cloud_p1):
+		enemies_first.append(SwipeEnemy_cloud)
+		j=j+1
+	for k in range(0, swipe_enemy_storm_p1):
+		enemies_first.append(SwipeEnemy_storm)
+		k=k+1
+	for i in range(0, tap_enemies_p2):
+		enemies_second.append(TapEnemy_plane)
+		i=i+1
+	for j in range(0, swipe_enemy_cloud_p2):
+		enemies_second.append(SwipeEnemy_cloud)
+		j=j+1
+	for k in range(0, swipe_enemy_storm_p2):
+		enemies_second.append(SwipeEnemy_storm)
+		k=k+1
 	current_enemies = enemies_first
 	
 func spawn_enemy():

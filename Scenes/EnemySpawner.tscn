@@ -2,12 +2,18 @@
 
 [ext_resource path="res://Scripts/EnemySpawner.gd" type="Script" id=1]
 
-[node name="EnemySpawner" type="Node2D"]
+[node name="EnemySpawner" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 spawn_obstackle_timer = 1
 spawn_obstackle_limit = 0.4
 update_sawn_time_timer = 5
+tap_enemies_p1 = 1
+swipe_enemy_cloud_p1 = 1
+swipe_enemy_storm_p1 = 1
+tap_enemies_p2 = 1
+swipe_enemy_cloud_p2 = 1
+swipe_enemy_storm_p2 = 1
 
 [node name="Timer" type="Timer" parent="." index="0"]
 

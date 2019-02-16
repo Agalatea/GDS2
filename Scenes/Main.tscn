@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
@@ -63,6 +63,13 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 [node name="Enemy" type="Node2D" parent="." index="3"]
 
 [node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
+
+tap_enemies_p1 = 1
+swipe_enemy_cloud_p1 = 1
+swipe_enemy_storm_p1 = 1
+tap_enemies_p2 = 1
+swipe_enemy_cloud_p2 = 1
+swipe_enemy_storm_p2 = 1
 
 [node name="Player" parent="." index="5" groups=[
 "Player",

@@ -287,7 +287,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 5
+frame = 9
 playing = true
 _sections_unfolded = [ "Transform" ]
 
