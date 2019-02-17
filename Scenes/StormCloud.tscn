@@ -1,21 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/StormCloudEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/clouds/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_000.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_000.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "storm2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "storm1",
 "speed": 5.0
@@ -59,7 +53,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="StormCloud" type="RigidBody2D" index="0" groups=[
+[node name="StormCloud" type="RigidBody2D" groups=[
 "Enemy",
 ]]
 
@@ -121,7 +115,7 @@ position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
 shape = SubResource( 2 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 6 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 0, -0.174824 )
 

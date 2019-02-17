@@ -10,6 +10,7 @@ export var update_sawn_time_timer = 5
 export var tap_enemies_p1 = 1
 export var swipe_enemy_cloud_p1 = 1
 export var swipe_enemy_storm_p1 = 1
+
 export var tap_enemies_p2 = 1
 export var swipe_enemy_cloud_p2 = 1
 export var swipe_enemy_storm_p2 = 1
@@ -94,6 +95,7 @@ func spawn_enemy():
 				rand_range(player_pos.x - screen_size_x*0.6, player_pos.x + screen_size_x*0.6),
 				spawn_limit_position,
 				screen_size_x - spawn_limit_position)
+				
 	if rand_enemy:
 		var enemy = rand_enemy.instance()
 		Global.Gamestate.get_node('Enemy').add_child(enemy)

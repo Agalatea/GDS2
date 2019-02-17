@@ -283,55 +283,59 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="7"]
 
-position = Vector2( 309.447, 866.484 )
+editor/display_folded = true
+position = Vector2( 336.17, 798.006 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 9
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ballons" type="Node2D" parent="." index="8"]
+[node name="Ballons" type="Node2D" parent="AnimatedSprite" index="0"]
 
 editor/display_folded = true
-position = Vector2( 329.8, 884.631 )
+position = Vector2( 40.706, 36.2939 )
+scale = Vector2( 2, 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="Ballons" index="0"]
+[node name="Sprite" type="Sprite" parent="AnimatedSprite/Ballons" index="0"]
 
 position = Vector2( -41.5151, -151.62 )
 texture = ExtResource( 15 )
 
-[node name="Sprite2" type="Sprite" parent="Ballons" index="1"]
+[node name="Sprite2" type="Sprite" parent="AnimatedSprite/Ballons" index="1"]
 
 position = Vector2( 6.31757, -161.548 )
 texture = ExtResource( 16 )
 
-[node name="Sprite3" type="Sprite" parent="Ballons" index="2"]
+[node name="Sprite3" type="Sprite" parent="AnimatedSprite/Ballons" index="2"]
 
 position = Vector2( -3.60999, -113.715 )
 texture = ExtResource( 17 )
 
-[node name="Sprite4" type="Sprite" parent="Ballons" index="3"]
+[node name="Sprite4" type="Sprite" parent="AnimatedSprite/Ballons" index="3"]
 
 position = Vector2( 53.2476, -140.79 )
 texture = ExtResource( 18 )
 
-[node name="Sprite5" type="Sprite" parent="Ballons" index="4"]
+[node name="Sprite5" type="Sprite" parent="AnimatedSprite/Ballons" index="4"]
 
 position = Vector2( 46.0276, -106.495 )
 texture = ExtResource( 19 )
 
-[node name="Sprite6" type="Sprite" parent="Ballons" index="5"]
+[node name="Sprite6" type="Sprite" parent="AnimatedSprite/Ballons" index="5"]
 
 position = Vector2( -41.5151, -103.788 )
 texture = ExtResource( 20 )
 
-[node name="Lines" type="Node2D" parent="." index="9"]
+[node name="Lines" type="Node2D" parent="AnimatedSprite" index="1"]
 
-position = Vector2( 334.312, 885.183 )
+editor/display_folded = true
+position = Vector2( 49.73, 37.3979 )
+scale = Vector2( 2, 2 )
 
-[node name="Line2D" type="Line2D" parent="Lines" index="0"]
+[node name="Line2D" type="Line2D" parent="AnimatedSprite/Lines" index="0"]
 
 rotation = -2.85962
 points = PoolVector2Array( 12.2357, 29.5707, 58.5552, 57.3267 )
@@ -341,7 +345,7 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="Line2D2" type="Line2D" parent="Lines" index="1"]
+[node name="Line2D2" type="Line2D" parent="AnimatedSprite/Lines" index="1"]
 
 rotation = -2.85962
 points = PoolVector2Array( 12.2357, 29.5707, 25.7387, 76.9141 )
@@ -351,7 +355,7 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="Line2D3" type="Line2D" parent="Lines" index="2"]
+[node name="Line2D3" type="Line2D" parent="AnimatedSprite/Lines" index="2"]
 
 rotation = -2.85962
 points = PoolVector2Array( 11.9002, 29.1436, -20.6727, 82.9848 )
@@ -361,7 +365,7 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="Line2D4" type="Line2D" parent="Lines" index="3"]
+[node name="Line2D4" type="Line2D" parent="AnimatedSprite/Lines" index="3"]
 
 rotation = -2.85962
 points = PoolVector2Array( 11.9002, 29.1436, 44.9283, 67.231 )
@@ -371,7 +375,7 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="Line2D5" type="Line2D" parent="Lines" index="4"]
+[node name="Line2D5" type="Line2D" parent="AnimatedSprite/Lines" index="4"]
 
 rotation = -2.85962
 points = PoolVector2Array( 11.9002, 29.1436, 0.618774, 85.1074 )
@@ -381,7 +385,7 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="Line2D6" type="Line2D" parent="Lines" index="5"]
+[node name="Line2D6" type="Line2D" parent="AnimatedSprite/Lines" index="5"]
 
 rotation = -2.85962
 points = PoolVector2Array( 11.9002, 29.1436, 9.29071, 19.2778 )
@@ -391,12 +395,12 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="BackgroundSound" parent="." index="10" instance=ExtResource( 21 )]
+[node name="BackgroundSound" parent="." index="8" instance=ExtResource( 21 )]
 
 position = Vector2( 523.395, 1154.19 )
 scale = Vector2( 0.929846, 1 )
 
-[node name="EffectsSound" parent="." index="11" instance=ExtResource( 22 )]
+[node name="EffectsSound" parent="." index="9" instance=ExtResource( 22 )]
 
 position = Vector2( 601.202, 1158.28 )
 

@@ -7,12 +7,12 @@ export (float) var impulse_value_y = -15
 
 var dying = false
 
-onready var CloudTypes = ["storm1", "storm2"]
+#onready var CloudTypes = ["storm1"]
 
 func init(pos):
 	global_position = pos
-	var cloud_sprite = CloudTypes[randi() % CloudTypes.size()]
-	$AnimatedSprite.play(cloud_sprite)
+	#var cloud_sprite = CloudTypes[randi() % CloudTypes.size()]
+	#$AnimatedSprite.play(cloud_sprite)
 	
 
 func ready():

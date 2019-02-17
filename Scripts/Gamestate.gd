@@ -3,9 +3,10 @@ extends Node2D
 var current_score = 0
 
 export var spawn_obstackle_timer = 2
-# above that score background shoudl change
-export var score_stage_one_change_limit = 20
-export var score_stage_two_change_limit = 40
+
+export var score_stage_one_change_limit = 20 # above that score stage will change to stage 2
+export var score_stage_two_change_limit = 40 # above that score stage will change to stage 3
+
 var screen_size_x 
 var screen_size_y
 onready var GUI = Global.GUI

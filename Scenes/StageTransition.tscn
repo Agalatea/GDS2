@@ -34,8 +34,28 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 1 )
 
+[node name="TransitionENd" type="Area2D" parent="." index="2"]
+
+position = Vector2( -0.178219, -2000 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionENd" index="0"]
+
+position = Vector2( 12.5478, -15.8257 )
+shape = SubResource( 1 )
+
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 [connection signal="body_entered" from="BackgroundChangeNotifier" to="." method="_on_BackgroundChangeNotifier_body_entered"]
+
+[connection signal="body_entered" from="TransitionENd" to="." method="_on_TransitionENd_body_entered"]
 
 
