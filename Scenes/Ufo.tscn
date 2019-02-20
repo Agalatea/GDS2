@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlaneEnemy.gd" type="Script" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Graphic/Animations/ufo/ufo_animation__ufo_fly_002.png" type="Texture" id=5]
 [ext_resource path="res://Graphic/Animations/ufo/ufo_animation__ufo_fly_003.png" type="Texture" id=6]
 [ext_resource path="res://Graphic/Animations/ufo/ufo_animation__ufo_fly_004.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/Bird/die/Bird_die__Bird_die_001.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/boom/airboom_0.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/boom/airboom_1.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/Animations/boom/airboom_2.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -17,10 +19,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
 "name": "die",
-"speed": 5.0
+"speed": 7.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -115,7 +117,6 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 

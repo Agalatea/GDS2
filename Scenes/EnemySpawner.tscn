@@ -14,6 +14,8 @@ swipe_enemy_storm_p1 = 1
 tap_enemies_p2 = 1
 swipe_enemy_cloud_p2 = 1
 swipe_enemy_storm_p2 = 1
+tap_enemies_p3 = 1
+swipe_enemies_p3 = 1
 
 [node name="Timer" type="Timer" parent="." index="0"]
 

@@ -1,13 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlaneEnemy.gd" type="Script" id=2]
 [ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_003.png" type="Texture" id=3]
 [ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_000.png" type="Texture" id=4]
 [ext_resource path="res://Graphic/Animations/airplane/airplane__airplane_fly_001.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/Bird/die/Bird_die__Bird_die_001.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_001.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_002.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_003.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=11]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
@@ -15,10 +20,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
 "name": "die",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -90,14 +95,13 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 101.558, 80.5628 )
 
-[node name="Plane" type="Node2D" index="0"]
+[node name="Plane" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
-position = Vector2( -2.72076, 1.36038 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -111,8 +115,9 @@ falling_speed = 100
 
 [node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
 
-frames = SubResource( 5 )
+frames = SubResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

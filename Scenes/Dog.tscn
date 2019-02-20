@@ -1,26 +1,20 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/StormCloudEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_001.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Animations/dark_cloud_animation/dark_cloud__dark_cloud_lightning_002.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_000.png" type="Texture" id=1]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_001.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_002.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=4]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "storm1",
+"name": "Idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 379.387, 91.4634 )
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 resource_name = "Fade_out"
 length = 2.0
@@ -53,7 +47,14 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="StormCloud" type="RigidBody2D" index="0" groups=[
+[sub_resource type="Animation" id=6]
+
+resource_name = "Fly"
+length = 4.0
+loop = false
+step = 0.1
+
+[node name="Dog" type="RigidBody2D" groups=[
 "Enemy",
 ]]
 
@@ -75,16 +76,12 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = 1.0
 angular_velocity = 0.0
 angular_damp = 2.0
-script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Pickable", "Visibility" ]
-impulse_value_x = 250
-impulse_value_y = -15
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 1.08072, 27.5584 )
-frames = SubResource( 1 )
-animation = "storm1"
+frames = SubResource( 5 )
+animation = "Idle"
 frame = 2
 playing = true
 
@@ -92,10 +89,11 @@ playing = true
 
 rect = Rect2( -10, -10, 20, 20 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-build_mode = 0
-polygon = PoolVector2Array( -15.6782, 141.231, -6.87567, 95.4583, -22.7202, 93.2576, -8.19604, 40.0023, -35.4839, 38.6819, -70.694, 21.9571, -98.8622, 28.1189, -118.668, -1.36961, -96.6615, -24.6963, -80.817, -23.8161, -76.4157, -51.544, -57.4902, -58.5861, -41.2056, -58.146, -24.0406, -84.1134, 3.68738, -92.4758, 33.616, -76.6313, 39.7777, -58.146, 60.9038, -59.0262, 84.6707, -45.3823, 83.7904, -20.2951, 95.6738, -22.9358, 111.518, -14.1333, 121.641, 6.55267, 108.878, 23.7176, 92.593, 28.1189, 72.3471, 21.9571, 65.3051, 32.5201, 37.137, 40.4424, 16.8912, 38.2418, 1.0466, 75.2124, 27.0141, 74.7723 )
+position = Vector2( -1.7605, -6.60193 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
 
 [node name="TouchArea" type="Area2D" parent="." index="3"]
 
@@ -114,9 +112,8 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
-shape = SubResource( 2 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -0.174824 )
 
@@ -127,12 +124,9 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Fade_out = SubResource( 3 )
+anims/Fade_out = SubResource( 4 )
+anims/Fly = SubResource( 6 )
 blend_times = [  ]
-
-[connection signal="body_entered" from="." to="." method="_on_StormCloud_body_entered"]
-
-[connection signal="body_shape_entered" from="." to="." method="_on_Cloud_body_shape_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 

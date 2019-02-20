@@ -15,6 +15,8 @@ export var tap_enemies_p2 = 1
 export var swipe_enemy_cloud_p2 = 1
 export var swipe_enemy_storm_p2 = 1
 
+export var tap_enemies_p3 = 1
+export var swipe_enemies_p3 = 1
 
 
 var current_spawn_timer = 0
@@ -26,7 +28,7 @@ var SwipeEnemy_cloud = preload("res://Scenes/CloudEnemy.tscn")
 var SwipeEnemy_storm = preload("res://Scenes/StormCloud.tscn")
 var TapEnemy_plane = preload("res://Scenes/PlaneEnemy.tscn")
 var TapEnemy_ufo = preload("res://Scenes/Ufo.tscn")
-
+var SwipeEnemy_lajka = preload("res://Scenes/Ufo.tscn") #TODO ONLY DEBUG CHANGE THIS WHEN LAJKA SCENE WILL BE READY
 
 var screen_size_x 
 var screen_size_y
@@ -40,7 +42,7 @@ onready var enemies_first = []
 #enemy_2 background TapEnemy_bird, SwipeEnemy_cloud, SwipeEnemy_storm
 onready var enemies_second = []
 ##enemy 3 bakcground
-onready var enemies_third = [TapEnemy_ufo]
+onready var enemies_third = []
 
 
 func _process(delta):
@@ -63,22 +65,28 @@ func _ready():
 	screen_size_y = get_viewport().size.y
 	for i in range(0, tap_enemies_p1):
 		enemies_first.append(TapEnemy_bird)
-		i=i+1
+
 	for j in range(0, swipe_enemy_cloud_p1):
 		enemies_first.append(SwipeEnemy_cloud)
-		j=j+1
+
 	for k in range(0, swipe_enemy_storm_p1):
 		enemies_first.append(SwipeEnemy_storm)
-		k=k+1
+
 	for i in range(0, tap_enemies_p2):
 		enemies_second.append(TapEnemy_plane)
-		i=i+1
+
 	for j in range(0, swipe_enemy_cloud_p2):
 		enemies_second.append(SwipeEnemy_cloud)
-		j=j+1
+
 	for k in range(0, swipe_enemy_storm_p2):
 		enemies_second.append(SwipeEnemy_storm)
-		k=k+1
+
+	for i in range(0, tap_enemies_p3):
+		enemies_third.append(TapEnemy_ufo)
+
+	for j in range(0, swipe_enemies_p3):
+		enemies_third.append(SwipeEnemy_lajka)
+
 	current_enemies = enemies_first
 	
 func spawn_enemy():
