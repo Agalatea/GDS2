@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 #force value of the swipe push in x direction
 export (float) var impulse_value_x = 250
@@ -6,22 +6,17 @@ export (float) var impulse_value_x = 250
 export (float) var impulse_value_y = -15
 
 var dying = false
-var fly_fight = true
-
-func change_fly_dir(direction_type):
-	fly_fight = !fly_fight
-
 
 
 func init(pos):
-	global_position = pos
-	#var cloud_sprite = CloudTypes[randi() % CloudTypes.size()]
-	#$AnimatedSprite.play(cloud_sprite)
+	pass
+#	global_position = pos
+#	$AnimatedSprite.play("Idle")
+#	print("JESTEM LAJKA")
+#	print(global_position)
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$AnimationPlayer.play("fly")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -39,6 +34,10 @@ func _on_SwipeDetector_swiped(direction):
 func _on_Dog_body_entered(body):
 	print(body)
 	if body.is_in_group("Player"):
-		print("PLAYER CHMURA")
+		print("PLAYER Łajka")
 		Global.Player.end()
 		queue_free() #death anim
+
+
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+	queue_free() 

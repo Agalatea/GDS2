@@ -9,16 +9,17 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
 spawn_obstackle_timer = 1
-score_stage_one_change_limit = 20
-score_stage_two_change_limit = 40
+score_stage_one_change_limit = 10
+score_stage_two_change_limit = 20
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0

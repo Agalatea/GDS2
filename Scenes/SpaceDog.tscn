@@ -1,0 +1,180 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/SpaceDog.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/DogSwipe.gd" type="Script" id=2]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_000.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_001.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Łajka/Łajka_lot__Lajka_Lajka_lot_002.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Animations/boom/airboom_0.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/boom/airboom_1.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/Animations/boom/airboom_2.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "die",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 169.132, 78.2049 )
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Fade_out"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "destroy"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Fly"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 170, 0 ), Vector2( -170, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="SpaceDog" type="Node2D"]
+
+rotation = -1.5708
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Dog" type="Area2D" parent="." index="0" groups=[
+"Enemy",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 1.0
+angular_damp = 2.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Angular", "Audio Bus", "Collision", "Linear", "Pickable", "Transform", "Visibility" ]
+impulse_value_x = 250
+impulse_value_y = -15
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dog" index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Dog" index="1"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Dog" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -68.8493, -52.2721, -16.7594, -54.6671, 16.7697, -27.1253, 107.179, -3.77466, 1.20258, 29.7545, -20.3518, 57.895, -88.6075, 40.5317, -30.5303, 23.7671, -65.2569, -1.97845, -32.9253, -24.1316, -80.2253, -27.1253 )
+
+[node name="TouchArea" type="Area2D" parent="Dog" index="3"]
+
+rotation = 1.57228
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/TouchArea" index="0"]
+
+position = Vector2( -1.47018, -1.36762 )
+scale = Vector2( 1, 0.911214 )
+shape = SubResource( 2 )
+
+[node name="SwipeDetector" parent="Dog" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 0.970612, -0.498363 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dog" index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fade_out = SubResource( 3 )
+anims/Fly = SubResource( 4 )
+blend_times = [  ]
+
+[connection signal="body_entered" from="Dog" to="Dog" method="_on_Dog_body_entered"]
+
+[connection signal="viewport_exited" from="Dog/VisibilityNotifier2D" to="Dog" method="_on_VisibilityNotifier2D_viewport_exited"]
+
+[connection signal="input_event" from="Dog/TouchArea" to="Dog/SwipeDetector" method="_on_TouchArea_input_event"]
+
+[connection signal="swiped" from="Dog/SwipeDetector" to="Dog" method="_on_SwipeDetector_swiped"]
+
+

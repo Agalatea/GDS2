@@ -28,7 +28,7 @@ var SwipeEnemy_cloud = preload("res://Scenes/CloudEnemy.tscn")
 var SwipeEnemy_storm = preload("res://Scenes/StormCloud.tscn")
 var TapEnemy_plane = preload("res://Scenes/PlaneEnemy.tscn")
 var TapEnemy_ufo = preload("res://Scenes/Ufo.tscn")
-var SwipeEnemy_lajka = preload("res://Scenes/Ufo.tscn") #TODO ONLY DEBUG CHANGE THIS WHEN LAJKA SCENE WILL BE READY
+var SwipeEnemy_lajka = preload("res://Scenes/SpaceDog.tscn") #TODO ONLY DEBUG CHANGE THIS WHEN LAJKA SCENE WILL BE READY
 
 var screen_size_x 
 var screen_size_y
