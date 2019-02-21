@@ -102,6 +102,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( 188.398, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -119,12 +120,13 @@ frames = SubResource( 1 )
 animation = "idle"
 frame = 2
 playing = true
+flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="1"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "fly"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0

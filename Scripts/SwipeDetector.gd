@@ -14,7 +14,7 @@ onready var timer = $Timer
 var swipe_start_position = Vector2()
 
 
-#HANDLE SWIPE ON BIRD OBJECT
+
 func _on_TouchArea_input_event(viewport, event, shape_idx):
 	if not event is InputEventScreenTouch:
 		return

@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="New Game Project"
-run/main_scene="res://Scenes/Menu.tscn"
+run/main_scene="res://Scenes/SplashScreen.tscn"
 boot_splash/image="res://Graphic/grass/Assety_-33.png"
 config/icon="res://icon.png"
 

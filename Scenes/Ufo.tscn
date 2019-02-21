@@ -101,7 +101,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
-position = Vector2( -2.72076, 1.36038 )
+position = Vector2( -92.8147, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -117,7 +117,9 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
+flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="1"]

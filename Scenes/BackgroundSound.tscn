@@ -5,7 +5,7 @@
 [ext_resource path="res://Graphic/Menu/Assety_-42.png" type="Texture" id=3]
 [ext_resource path="res://Sound/music_1_menu.wav" type="AudioStream" id=4]
 
-[node name="BackgroundSound" type="Node2D" index="0"]
+[node name="BackgroundSound" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Visibility" ]

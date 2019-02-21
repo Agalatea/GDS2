@@ -20,8 +20,8 @@
 [ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=18]
 [ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=19]
 [ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -287,6 +287,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -390,14 +391,11 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="BackgroundSound" parent="." index="10" instance=ExtResource( 21 )]
-
-position = Vector2( 523.395, 1154.19 )
-scale = Vector2( 0.929846, 1 )
-
-[node name="EffectsSound" parent="." index="11" instance=ExtResource( 22 )]
+[node name="EffectsSound" parent="." index="10" instance=ExtResource( 21 )]
 
 position = Vector2( 601.202, 1158.28 )
+
+[node name="BackgroundSound" parent="." index="11" instance=ExtResource( 22 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

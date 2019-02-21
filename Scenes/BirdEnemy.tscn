@@ -93,6 +93,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+position = Vector2( -83.3165, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -108,8 +109,9 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
+flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
