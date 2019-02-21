@@ -16,6 +16,7 @@ func init(pos):
 	
 
 func ready():
+	$SwipeEnemy.stream = Global.swiped_enemy_sound
 	randomize()
 	
 
@@ -32,6 +33,7 @@ func destroy():
 func _on_SwipeDetector_swiped(direction):
 	# Handle swipe detection on object
 	if not dying:
+		$SwipeEnemy.play()
 		dying = true
 		print("Swiped to: ", direction)
 		apply_impulse(direction, Vector2(impulse_value_x * -direction.x, impulse_value_y))

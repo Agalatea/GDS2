@@ -130,6 +130,15 @@ playback_speed = 1.0
 anims/Fade_out = SubResource( 3 )
 blend_times = [  ]
 
+[node name="SwipeEnemy" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
+
 [connection signal="body_entered" from="." to="." method="_on_StormCloud_body_entered"]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Cloud_body_shape_entered"]

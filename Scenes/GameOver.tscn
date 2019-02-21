@@ -270,6 +270,15 @@ position = Vector2( 542.791, 1176.45 )
 
 position = Vector2( 612.446, 1180.84 )
 
+[node name="MenuTap" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/PlayAgain" to="." method="_on_PlayAgain_pressed"]
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/CenterContainer/Back" to="." method="_on_Back_pressed"]

@@ -104,7 +104,16 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 falling_speed = 100
 
-[node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
+[node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="0"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
+
+[node name="Sprite" type="AnimatedSprite" parent="Area2D" index="1"]
 
 frames = SubResource( 1 )
 animation = "idle"
@@ -112,12 +121,12 @@ frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="2"]
 
 build_mode = 0
 polygon = PoolVector2Array( 39.4335, -3.27835, 94.8898, 28.4109, 47.3558, 27.9708, 68.4821, 84.3074, -0.178131, 25.33, -10.7412, 24.8899, -27.9063, 68.4627, -41.5503, 52.6181, -59.5956, 70.6634, -59.1555, 28.8511, -39.3496, 26.6504, -22.1846, -2.83823, 7.30408, -25.725, 38.1131, -38.4887, 56.1584, -23.5243, 59.6794, -12.5211, 46.4756, -14.7217 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="3"]
 
 root_node = NodePath("..")
 autoplay = ""

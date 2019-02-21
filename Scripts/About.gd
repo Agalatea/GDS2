@@ -5,6 +5,7 @@ extends CanvasLayer
 # var b = "textvar"
 
 func _ready():
+	$MenuTap.stream = Global.menu_tap_sound
 	pass
 
 #func _process(delta):
@@ -14,6 +15,7 @@ func _ready():
 
 
 func _on_Back_pressed():
+	$MenuTap.play()
 	get_tree().change_scene(Global.Menu)
 
 

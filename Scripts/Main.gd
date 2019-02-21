@@ -6,6 +6,7 @@ var game_scene = preload("res://Scenes/Main.tscn")
 func _ready():
 	$HBoxContainer/BestScore.text = str(Global.highscore)
 	$HBoxContainer2/SumScore.text = str(Global.sum_score)
+	$MenuTap.stream = Global.menu_tap_sound
 #func _input(event):
 #	if event is InputEventScreenTouch:
 #		print("touch")
@@ -31,11 +32,14 @@ func _on_Timer_timeout():
 
 
 func _on_TextureButton_pressed():
+	$MenuTap.play()
 	get_tree().change_scene("res://Scenes/Main.tscn")
 
 
 func _on_About_pressed():
+	$MenuTap.play()
 	get_tree().change_scene("res://Scenes/About.tscn")
 
 func _on_Exit_pressed():
+	$MenuTap.play()
 	get_tree().quit()

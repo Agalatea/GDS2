@@ -32,10 +32,24 @@ var background_second = preload("res://Graphic/baground/Assety_-09.png")
 var background_second_mid_third = preload("res://Graphic/baground/Assety_-55.png")
 var background_third = preload("res://Graphic/baground/Assety_-10.png")
 
+# Sounds
+var menu_tap_sound = preload("res://Sound/MenuClick.wav") 
+var swiped_enemy_sound = preload("res://Sound/Swipe.wav")
+var highscore_sound = preload("res://Sound/HighScore.wav")
+var death_pop_sound = preload ("res://Sound/DeathPop.wav")
+var death_zap_sound = preload("res://Sound/DeathZap.wav")
+
+
 func _ready():
 	screen_size_x = get_viewport().size.x
 	screen_size_y = get_viewport().size.y
 	setup()
+	
+#func setup_sounds():
+#	menu_tap_stream = AudioStreamPlayer.new()
+#	menu_tap_stream.stream = menu_tap_sound
+#	menu_tap_stream.playing = true
+#	menu_tap_stream.bus = "Effects"
 
 func setup():
 	var f = File.new()

@@ -101,7 +101,7 @@ bus = "Master"
 position = Vector2( 278.158, 853.447 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="4"]
@@ -305,6 +305,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="MenuTap" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/CloudEnemy.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -11,17 +11,17 @@
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "cloud_white",
+"name": "cloud_dark",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "cloud_dark_big",
+"name": "cloud_white",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "cloud_dark",
+"name": "cloud_dark_big",
 "speed": 5.0
 } ]
 
@@ -69,7 +69,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Cloud" type="RigidBody2D" index="0" groups=[
+[node name="Cloud" type="RigidBody2D" groups=[
 "Enemy",
 ]]
 
@@ -145,6 +145,15 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Fade_out = SubResource( 4 )
 blend_times = [  ]
+
+[node name="SwipeEnemy" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_Cloud_body_entered"]
 

@@ -287,7 +287,7 @@ position = Vector2( 309.447, 866.484 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "Idlepig"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -396,6 +396,17 @@ round_precision = 8
 position = Vector2( 601.202, 1158.28 )
 
 [node name="BackgroundSound" parent="." index="11" instance=ExtResource( 22 )]
+
+position = Vector2( 518, 1152 )
+
+[node name="MenuTap" type="AudioStreamPlayer" parent="." index="12"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

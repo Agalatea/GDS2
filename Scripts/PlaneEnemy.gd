@@ -4,6 +4,7 @@ var dying = false
 export (int) var falling_speed  = 100
 
 func _ready():
+	$TapEnemy.stream = Global.death_zap_sound
 	$AnimationPlayer.play("fly")
 	
 
@@ -20,6 +21,7 @@ func destroy():
 func _input_event(viewport, event, shape_idx):
 	#To dziala jak tapniecie
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and not dying:
+		$TapEnemy.play()
 		dying = true
 		$CollisionShape2D.disabled = true
 		$AnimationPlayer.play("fade_out")

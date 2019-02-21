@@ -137,6 +137,15 @@ blend_times = [  ]
 
 shape = SubResource( 4 )
 
+[node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="3"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 
 

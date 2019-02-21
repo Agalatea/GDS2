@@ -16,7 +16,8 @@ func init(pos):
 #	print(global_position)
 
 func _ready():
-	$AnimationPlayer.play("fly")
+	$SwipeEnemy.stream = Global.swiped_enemy_sound
+	$AnimationPlayer.play("Fly")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -25,6 +26,7 @@ func _ready():
 
 
 func _on_SwipeDetector_swiped(direction):
+	$SwipeEnemy.play()
 	dying = true
 	$AnimatedSprite.play("die")
 	$CollisionPolygon2D.disabled = true
