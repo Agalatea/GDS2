@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 170, 0 ), Vector2( -170, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="SpaceDog" type="Node2D" index="0"]
+[node name="SpaceDog" type="Node2D"]
 
 rotation = -1.5708
 script = ExtResource( 1 )
@@ -121,7 +121,7 @@ impulse_value_y = -15
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

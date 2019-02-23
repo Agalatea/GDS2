@@ -1,19 +1,23 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=8]
-[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=9]
-[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=10]
-[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=11]
-[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=12]
-[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=13]
-[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=14]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_000.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_001.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_002.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_003.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=12]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=13]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=14]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Ballons.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scripts/Lines.gd" type="Script" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,13 +27,18 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "die",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "lookup",
 "speed": 5.0
 } ]
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 357.255, 701.232 )
 input_pickable = false
@@ -58,37 +67,38 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Ballons" type="Node2D" parent="." index="1"]
 
+script = ExtResource( 16 )
+
+[node name="Ballon" parent="Ballons" index="0" instance=ExtResource( 17 )]
+
 editor/display_folded = true
+animation = "0"
+playing = false
 
-[node name="Sprite" type="Sprite" parent="Ballons" index="0"]
+[node name="Ballon1" parent="Ballons" index="1" instance=ExtResource( 17 )]
 
-position = Vector2( -41.5151, -151.62 )
-texture = ExtResource( 9 )
+position = Vector2( 10.8951, -152.947 )
+animation = "7"
 
-[node name="Sprite2" type="Sprite" parent="Ballons" index="1"]
+[node name="Ballon2" parent="Ballons" index="2" instance=ExtResource( 17 )]
 
-position = Vector2( 6.31757, -161.548 )
-texture = ExtResource( 10 )
+position = Vector2( 57.9979, -148.966 )
+animation = "4"
 
-[node name="Sprite3" type="Sprite" parent="Ballons" index="2"]
+[node name="Ballon3" parent="Ballons" index="3" instance=ExtResource( 17 )]
 
-position = Vector2( -3.60999, -113.715 )
-texture = ExtResource( 11 )
+position = Vector2( -42.8419, -103.854 )
+animation = "2"
 
-[node name="Sprite4" type="Sprite" parent="Ballons" index="3"]
+[node name="Ballon4" parent="Ballons" index="4" instance=ExtResource( 17 )]
 
-position = Vector2( 53.2476, -140.79 )
-texture = ExtResource( 12 )
+position = Vector2( -4.36362, -113.142 )
+animation = "2"
 
-[node name="Sprite5" type="Sprite" parent="Ballons" index="4"]
+[node name="Ballon5" parent="Ballons" index="5" instance=ExtResource( 17 )]
 
-position = Vector2( 46.0276, -106.495 )
-texture = ExtResource( 13 )
-
-[node name="Sprite6" type="Sprite" parent="Ballons" index="5"]
-
-position = Vector2( -41.5151, -103.788 )
-texture = ExtResource( 14 )
+position = Vector2( 44.7295, -105.844 )
+animation = "5"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
@@ -97,6 +107,9 @@ build_mode = 0
 polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -23.8842, -177.582, -0.997589, -193.866, 26.2903, -188.585, 36.4132, -170.98, 63.261, -170.54, 86.1476, -150.294, 78.6655, -120.805, 77.7852, -106.281, 59.74, -75.9122, 36.8534, -29.6989, 38.6139, 0.669983, 44.3355, 22.6763, 20.1285, 16.0744, -11.1205, 39.4012, -23.004, 18.7152, -54.6931, -4.17145, -57.774, -20.4561, -74.939, -101.88, -74.939, -153.815 )
 
 [node name="Lines" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+script = ExtResource( 18 )
 
 [node name="Line2D" type="Line2D" parent="Lines" index="0"]
 
@@ -165,8 +178,27 @@ wait_time = 7.0
 one_shot = false
 autostart = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="FallTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
 
 [connection signal="timeout" from="LookUpTimer" to="." method="_on_LookUpTimer_timeout"]
 
+[connection signal="timeout" from="FallTimer" to="." method="_on_FallTimer_timeout"]
 
+
+[editable path="Ballons/Ballon"]

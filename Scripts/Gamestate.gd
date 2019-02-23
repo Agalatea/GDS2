@@ -44,7 +44,8 @@ func _process(delta):
 
 
 func _on_EnemySpawner_spawn_enemy():
-	$EnemySpawner.spawn_enemy()
+	if Global.Player.state != Global.Player.States.DEAD:
+		$EnemySpawner.spawn_enemy()
 
 
 func update_GUI():

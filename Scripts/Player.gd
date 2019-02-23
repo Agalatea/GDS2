@@ -6,6 +6,8 @@ enum States {INIT, ALIVE, INVULNERABLE, DEAD}
 var state = null
 
 var motion = Vector2()
+var fall = Vector2()
+
 export (float) var basic_speed = 0
 
 #how much speed increase over time
@@ -32,14 +34,19 @@ func _ready():
 func run():
 	motion.y =- basic_speed
 
+
+
 #func _input(event):
 #    if event.is_action_pressed('click'):	
 #        target = get_global_mouse_position()
 
 func _physics_process(delta):
-	run()
+	
 	if state in [States.ALIVE]:
+		run()
 		move_and_slide(motion)
+	elif state in [States.DEAD]:
+		move_and_slide(-motion *2)
 		
 	#Colided with something	
 	if get_slide_count() > 0: 
@@ -71,9 +78,13 @@ func increase_speed_over_time():
 
 func end():
 	state = States.DEAD
+	$CollisionPolygon2D.disabled = true
+	$Ballons.destroy_baloons()
+	$Lines.destroy_lines()
+	$Camera2D.current = false
 	Global.sum_up_game()
-	queue_free()
-	get_tree().change_scene(Global.GameOver)
+
+	$FallTimer.start()
 	
 
 func _on_LookUpTimer_timeout():
@@ -84,3 +95,8 @@ func _on_Sprite_animation_finished():
 	if $Sprite.animation == "lookup":
 		$Sprite.play("idle")
 		$LookUpTimer.wait_time = look_up_time
+
+
+func _on_FallTimer_timeout():
+	queue_free()
+	get_tree().change_scene(Global.GameOver)
