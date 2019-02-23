@@ -8,16 +8,10 @@ export (float) var impulse_value_y = -15
 var dying = false
 
 
-func init(pos):
-	pass
-#	global_position = pos
-#	$AnimatedSprite.play("Idle")
-#	print("JESTEM LAJKA")
-#	print(global_position)
 
 func _ready():
 	$SwipeEnemy.stream = Global.swiped_enemy_sound
-	$AnimationPlayer.play("Fly")
+	#$AnimationPlayer.play("Fly")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
