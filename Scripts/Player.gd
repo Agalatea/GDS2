@@ -45,6 +45,7 @@ func _physics_process(delta):
 	if state in [States.ALIVE]:
 		run()
 		move_and_slide(motion)
+		
 	elif state in [States.DEAD]:
 		move_and_slide(-motion *2)
 		

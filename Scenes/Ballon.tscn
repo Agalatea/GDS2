@@ -101,7 +101,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Ballon" type="AnimatedSprite" index="0"]
+[node name="Ballon" type="AnimatedSprite"]
 
 position = Vector2( -41.5151, -151.62 )
 frames = SubResource( 1 )

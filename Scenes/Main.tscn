@@ -11,14 +11,15 @@
 
 [node name="Main" type="Node2D"]
 
-position = Vector2( 108.791, 0 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 spawn_obstackle_timer = 1
 score_stage_one_change_limit = 10
 score_stage_two_change_limit = 20
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -35,7 +36,7 @@ _sections_unfolded = [ "Scroll" ]
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
 position = Vector2( -4.65906, 0 )
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 1, 1.2 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -56,7 +57,7 @@ First_Second = ExtResource( 4 )
 
 [node name="StartingBackground" type="Sprite" parent="." index="2"]
 
-position = Vector2( 260, -116.325 )
+position = Vector2( 366.79, -113.807 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
@@ -64,12 +65,15 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
 
+editor/display_folded = true
+
 [node name="Player" parent="." index="5" groups=[
 "Player",
 ] instance=ExtResource( 7 )]
 
-position = Vector2( 261.375, 15.9047 )
-rotation = -0.00089705
+editor/display_folded = true
+position = Vector2( 360, 15.9047 )
+rotation = -0.00872665
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
 basic_speed = 200.0
 

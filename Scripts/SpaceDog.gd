@@ -11,5 +11,5 @@ func _ready():
 	
 func init(pos):
 	global_position = pos
-	print("dog pos ", pos) 
+
 #	pass

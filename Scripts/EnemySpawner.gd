@@ -21,7 +21,7 @@ export var swipe_enemies_p3 = 1
 
 var current_spawn_timer = 0
 var spawn_timer_offset = 0
-var spawn_limit_position = 100 # how far from left and right screen corner enemies will spawn
+var spawn_limit_position = 50 # how far from left and right screen corner enemies will spawn
 
 var TapEnemy_bird = preload("res://Scenes/BirdEnemy.tscn")
 var SwipeEnemy_cloud = preload("res://Scenes/CloudEnemy.tscn")
@@ -99,8 +99,9 @@ func spawn_enemy():
 	var player_pos = Global.Player.global_position
 	var spawn_pos = Vector2()
 	spawn_pos.y = player_pos.y - screen_size_y
+	
 	spawn_pos.x = clamp(
-				rand_range(player_pos.x - screen_size_x*0.6, player_pos.x + screen_size_x*0.6),
+				rand_range(player_pos.x - screen_size_x*0.5, player_pos.x + screen_size_x*0.5),
 				spawn_limit_position,
 				screen_size_x - spawn_limit_position)
 				

@@ -27,7 +27,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 169.132, 78.2049 )
+extents = Vector2( 234.676, 139.327 )
 
 [sub_resource type="Animation" id=3]
 
@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 170, 0 ), Vector2( -170, 0 ), Vector2( 0, 0 ) ]
 }
 
-[node name="SpaceDog" type="Node2D"]
+[node name="SpaceDog" type="Node2D" index="0"]
 
 rotation = -1.5708
 script = ExtResource( 1 )
@@ -115,13 +115,16 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Angular", "Audio Bus", "Collision", "Linear", "Pickable", "Transform", "Visibility" ]
 impulse_value_x = 250
 impulse_value_y = -15
+left_pitch = -13
+right_pitch = 13
+speed = 150
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Dog" index="0"]
 
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -150,13 +153,17 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dog/TouchArea" index="0"]
 
-position = Vector2( -1.47018, -1.36762 )
+position = Vector2( -4.47184, -6.75184 )
 scale = Vector2( 1, 0.911214 )
 shape = SubResource( 2 )
 
 [node name="SwipeDetector" parent="Dog" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 0.970612, -0.498363 )
+
+[node name="Timer" parent="Dog/SwipeDetector" index="0"]
+
+wait_time = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dog" index="5"]
 
@@ -187,3 +194,4 @@ bus = "Effects"
 [connection signal="swiped" from="Dog/SwipeDetector" to="Dog" method="_on_SwipeDetector_swiped"]
 
 
+[editable path="Dog/SwipeDetector"]
