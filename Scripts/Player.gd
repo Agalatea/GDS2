@@ -30,6 +30,7 @@ func _ready():
 	Global.Player = self 
 	state = ALIVE
 	$LookUpTimer.wait_time = look_up_time
+	$TapEnemy.stream = Global.death_pop_sound
 
 func run():
 	motion.y =- basic_speed
@@ -80,6 +81,7 @@ func increase_speed_over_time():
 func end():
 	state = States.DEAD
 	$CollisionPolygon2D.disabled = true
+	$TapEnemy.play()
 	$Ballons.destroy_baloons()
 	$Lines.destroy_lines()
 	$Camera2D.current = false
