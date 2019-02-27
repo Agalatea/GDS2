@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Gamestate.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/TransitionsHandler.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/StageTransition.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/TransitionsHandler.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/StageTransition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=8]
 
 [node name="Main" type="Node2D"]
 
@@ -17,9 +17,43 @@ spawn_obstackle_timer = 1
 score_stage_one_change_limit = 10
 score_stage_two_change_limit = 20
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+[node name="Transitions" type="Node2D" parent="." index="0"]
+
+script = ExtResource( 2 )
+First_Second = ExtResource( 3 )
+
+[node name="StartingBackground" type="Sprite" parent="." index="1"]
+
+position = Vector2( 366.79, -113.807 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="Enemy" type="Node2D" parent="." index="2"]
+
+[node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
 
 editor/display_folded = true
+
+[node name="Player" parent="." index="4" groups=[
+"Player",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 360, 15.9047 )
+rotation = -0.00872665
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
+basic_speed = 200.0
+
+[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 2.22209, -264.648 )
+limit_left = 0
+smoothing_enabled = true
+smoothing_speed = 50.0
+editor_draw_limits = true
+_sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
+
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -28,7 +62,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, -900 )
+scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
 _sections_unfolded = [ "Scroll" ]
@@ -45,44 +79,10 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 11.3684, -251.586 )
 scale = Vector2( 1.03, 1 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 centered = false
 offset = Vector2( -10, 0 )
 _sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="Transitions" type="Node2D" parent="." index="1"]
-
-script = ExtResource( 3 )
-First_Second = ExtResource( 4 )
-
-[node name="StartingBackground" type="Sprite" parent="." index="2"]
-
-position = Vector2( 366.79, -113.807 )
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
-
-[node name="Enemy" type="Node2D" parent="." index="3"]
-
-[node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
-
-editor/display_folded = true
-
-[node name="Player" parent="." index="5" groups=[
-"Player",
-] instance=ExtResource( 7 )]
-
-editor/display_folded = true
-position = Vector2( 360, 15.9047 )
-rotation = -0.00872665
-_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
-basic_speed = 200.0
-
-[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 8 )]
-
-position = Vector2( 2.22209, -264.648 )
-limit_left = 0
-editor_draw_limits = true
-_sections_unfolded = [ "Editor", "Limit" ]
 
 [connection signal="stage_one" from="." to="EnemySpawner" method="_on_Main_stage_one"]
 

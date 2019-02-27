@@ -86,7 +86,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[node name="Bird" type="Node2D"]
+[node name="Bird" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
@@ -117,7 +117,7 @@ bus = "Effects"
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
