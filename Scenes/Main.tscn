@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Gamestate.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/TransitionsHandler.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/StageTransition.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/BackgroundCloudsSpawner.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=9]
 
 [node name="Main" type="Node2D" index="0"]
 
@@ -26,34 +27,47 @@ First_Second = ExtResource( 3 )
 
 position = Vector2( 366.79, -113.807 )
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
-[node name="Enemy" type="Node2D" parent="." index="2"]
+[node name="BackgroundClouds" type="Node2D" parent="." index="2"]
 
-[node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+min_look_up_value = 4
+max_look_up_value = 10
+
+[node name="CloudSpawnTimer" type="Timer" parent="BackgroundClouds" index="0"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="Enemy" type="Node2D" parent="." index="3"]
+
+[node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
 
 editor/display_folded = true
 
-[node name="Player" parent="." index="4" groups=[
+[node name="Player" parent="." index="5" groups=[
 "Player",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 360, 15.9047 )
 rotation = -0.00872665
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
 basic_speed = 200.0
 
-[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 7 )]
+[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 0, -497 )
+position = Vector2( 2.22209, -264.648 )
 limit_left = 0
 smoothing_enabled = true
-smoothing_speed = 50.0
-offset_v = 0.5
+smoothing_speed = 30.0
 editor_draw_limits = true
-_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
+_sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -66,7 +80,6 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
-_sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
@@ -80,7 +93,7 @@ _sections_unfolded = [ "Motion" ]
 
 position = Vector2( 11.3684, -251.586 )
 scale = Vector2( 1.03, 1 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 offset = Vector2( -10, 0 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -90,6 +103,8 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [connection signal="stage_three" from="." to="EnemySpawner" method="_on_Main_stage_three"]
 
 [connection signal="stage_two" from="." to="EnemySpawner" method="_on_Main_stage_two"]
+
+[connection signal="timeout" from="BackgroundClouds/CloudSpawnTimer" to="BackgroundClouds" method="_on_CloudSpawnTimer_timeout"]
 
 [connection signal="spawn_enemy" from="EnemySpawner" to="." method="_on_EnemySpawner_spawn_enemy"]
 
