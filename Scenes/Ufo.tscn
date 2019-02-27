@@ -117,6 +117,7 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -144,7 +145,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 

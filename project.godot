@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="New Game Project"
+config/name="Pork Can Fly"
 run/main_scene="res://Scenes/SplashScreen.tscn"
 boot_splash/image="res://Graphic/Pork can fly_napis/Assety_-56.png"
 config/icon="res://icon.png"

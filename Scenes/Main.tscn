@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=8]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -45,12 +45,13 @@ basic_speed = 200.0
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 2.22209, -264.648 )
+position = Vector2( 0, -497 )
 limit_left = 0
 smoothing_enabled = true
 smoothing_speed = 50.0
+offset_v = 0.5
 editor_draw_limits = true
-_sections_unfolded = [ "Editor", "Limit", "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="5"]
 
