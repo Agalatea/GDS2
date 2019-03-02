@@ -30,7 +30,37 @@ func _ready():
 	Global.Player = self 
 	state = ALIVE
 	$LookUpTimer.wait_time = look_up_time
-	$TapEnemy.stream = Global.death_pop_sound
+	set_pig_animation()
+
+func set_pig_animation():
+	if (Global.active_pig == 1):
+		$Sprite.animation = "idle_1"
+	elif (Global.active_pig ==2):
+		$Sprite.animation = "idle_2"
+	elif (Global.active_pig ==3):
+		$Sprite.animation = "idle_3"
+	elif (Global.active_pig ==4):
+		$Sprite.animation = "idle_4"
+
+func play_pig_lookup_animation():
+	if (Global.active_pig == 1):
+		$Sprite.play("lookup_1")
+	elif (Global.active_pig ==2):
+		$Sprite.play("lookup_2")
+	elif (Global.active_pig ==3):
+		$Sprite.play("lookup_3")
+	elif (Global.active_pig ==4):
+		$Sprite.play("lookup_4")
+
+func play_pig_idle_animation():
+	if (Global.active_pig == 1):
+		$Sprite.play("idle_1")
+	elif (Global.active_pig ==2):
+		$Sprite.play("idle_2")
+	elif (Global.active_pig ==3):
+		$Sprite.play("idle_3")
+	elif (Global.active_pig ==4):
+		$Sprite.play("idle_4")
 
 func run():
 	motion.y =- basic_speed
@@ -91,12 +121,13 @@ func end():
 	
 
 func _on_LookUpTimer_timeout():
-	$Sprite.play("lookup")
+	if (Global.active_pig == 1):
+		play_pig_lookup_animation()
 	look_up_time = rand_range(min_look_up_value, max_look_up_value)
 
 func _on_Sprite_animation_finished():
-	if $Sprite.animation == "lookup":
-		$Sprite.play("idle")
+	if $Sprite.animation == "lookup_1" or $Sprite.animation == "lookup_2" or $Sprite.animation == "lookup_3" or $Sprite.animation == "lookup_4" :
+		play_pig_idle_animation()
 		$LookUpTimer.wait_time = look_up_time
 
 

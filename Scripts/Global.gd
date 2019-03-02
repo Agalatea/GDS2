@@ -39,6 +39,14 @@ var highscore_sound = preload("res://Sound/HighScore.wav")
 var death_pop_sound = preload ("res://Sound/DeathPop.wav")
 var death_zap_sound = preload("res://Sound/DeathZap.wav")
 
+#TODO - load different pigs
+var pig_1_unlocked = 1
+var pig_2_unlocked = 0
+var pig_3_unlocked = 0
+var pig_4_unlocked = 0
+var active_pig = 1
+
+
 
 func _ready():
 	screen_size_x = get_viewport().size.x
@@ -57,12 +65,18 @@ func setup():
 		f.open(score_file, File.READ)
 		var content = f.get_as_text()
 		if not content:
-			content =  "0,0,on,on"
+			content =  "0,0,on,on,1,0,0,0,1"
 		values_from_file = content.split(",")
 		highscore = int(values_from_file[0])
 		sum_score = int(values_from_file[1])
 		background_sound = str(values_from_file[2])
 		effects_sound = str (values_from_file[3])
+		if values_from_file.size() > 4:
+			pig_1_unlocked =  int (values_from_file[4])
+			pig_2_unlocked =  int (values_from_file[5])
+			pig_3_unlocked =  int (values_from_file[6])
+			pig_4_unlocked =  int (values_from_file[7])
+			active_pig =  int (values_from_file[8])
 		f.close()
 		
 func sum_up_game():
@@ -90,7 +104,7 @@ func save_add_score():
 func save():
 	var f = File.new()
 	f.open(score_file, File.WRITE)
-	f.store_string(str(highscore) +","+ str(sum_score)+","+background_sound+","+effects_sound)
+	f.store_string(str(highscore) +","+ str(sum_score)+","+background_sound+","+effects_sound+","+str(pig_1_unlocked)+","+str(pig_2_unlocked)+","+str(pig_3_unlocked)+","+str(pig_4_unlocked)+","+str(active_pig))
 	f.close()
 
 

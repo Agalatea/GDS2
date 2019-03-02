@@ -1,19 +1,20 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/About.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
 [ext_resource path="res://Graphic/Game over/Assety_-49.png" type="Texture" id=3]
-[ext_resource path="res://Sound/music_1_menu.wav" type="AudioStream" id=4]
-[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_000.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_001.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_002.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/fonty-score/CALIBRIB.TTF" type="DynamicFontData" id=8]
-[ext_resource path="res://Graphic/fonty-score/CALIBRII.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_000.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_001.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Animations/pig_wave/pig_wave__pig_wave_002.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/fonty-score/CALIBRIB.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://Graphic/fonty-score/CALIBRII.TTF" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -24,15 +25,15 @@ animations = [ {
 size = 50
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 8 )
-_sections_unfolded = [ "Font", "Settings" ]
+font_data = ExtResource( 7 )
+_sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
 
 size = 40
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="About" type="CanvasLayer"]
@@ -72,7 +73,7 @@ anchor_bottom = 0.0
 margin_left = 86.0
 margin_top = 1152.0
 margin_right = 292.0
-margin_bottom = 1270.0
+margin_bottom = 1275.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -87,16 +88,7 @@ group = null
 texture_normal = ExtResource( 3 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="BGM" type="AudioStreamPlayer" parent="." index="2"]
-
-stream = ExtResource( 4 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
 position = Vector2( 278.158, 853.447 )
 frames = SubResource( 1 )
@@ -104,8 +96,9 @@ animation = "default"
 frame = 1
 playing = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="4"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -258,7 +251,7 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 [node name="Label4" type="Label" parent="VBoxContainer" index="6"]
 
@@ -306,7 +299,54 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="MenuTap" type="AudioStreamPlayer" parent="." index="5"]
+[node name="Art3" type="Label" parent="VBoxContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 385.0
+margin_right = 600.0
+margin_bottom = 436.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Music"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="Label6" type="Label" parent="VBoxContainer" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 440.0
+margin_right = 600.0
+margin_bottom = 523.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Eric Matyas
+www.soundimage.org"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="MenuTap" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = null
 volume_db = 0.0
@@ -314,6 +354,14 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Effects"
+
+[node name="BackgroundSound" parent="." index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 537.201, 1158.88 )
+
+[node name="EffectsSound" parent="." index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 618.585, 1163.1 )
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

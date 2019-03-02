@@ -1,41 +1,75 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=2]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_000.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_001.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_002.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_003.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=8]
-[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=9]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=10]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_000.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_001.png" type="Texture" id=3]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_002.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_003.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_2.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_001.png" type="Texture" id=11]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=12]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=13]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=14]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/Ballons.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scripts/Lines.gd" type="Script" id=18]
-[ext_resource path="res://Sound/DeathPop.wav" type="AudioStream" id=19]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=15]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=16]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=17]
+[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_4.png" type="Texture" id=18]
+[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_3.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/Ballons.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scripts/Lines.gd" type="Script" id=22]
+[ext_resource path="res://Sound/DeathPop.wav" type="AudioStream" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "die",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "idle_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "lookup_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "idle_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": false,
-"name": "lookup",
+"name": "lookup_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "lookup_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "lookup_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "idle_3",
 "speed": 5.0
 } ]
 
@@ -62,41 +96,41 @@ position = Vector2( -15.9999, -17 )
 rotation = -0.0167412
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-animation = "idle"
+animation = "idle_1"
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ballons" type="Node2D" parent="." index="1"]
 
-script = ExtResource( 16 )
+script = ExtResource( 20 )
 
-[node name="Ballon" parent="Ballons" index="0" instance=ExtResource( 17 )]
+[node name="Ballon" parent="Ballons" index="0" instance=ExtResource( 21 )]
 
 editor/display_folded = true
 animation = "0"
 playing = false
 
-[node name="Ballon1" parent="Ballons" index="1" instance=ExtResource( 17 )]
+[node name="Ballon1" parent="Ballons" index="1" instance=ExtResource( 21 )]
 
 position = Vector2( 10.8951, -152.947 )
 animation = "7"
 
-[node name="Ballon2" parent="Ballons" index="2" instance=ExtResource( 17 )]
+[node name="Ballon2" parent="Ballons" index="2" instance=ExtResource( 21 )]
 
 position = Vector2( 57.9979, -148.966 )
 animation = "4"
 
-[node name="Ballon3" parent="Ballons" index="3" instance=ExtResource( 17 )]
+[node name="Ballon3" parent="Ballons" index="3" instance=ExtResource( 21 )]
 
 position = Vector2( -42.8419, -103.854 )
 animation = "2"
 
-[node name="Ballon4" parent="Ballons" index="4" instance=ExtResource( 17 )]
+[node name="Ballon4" parent="Ballons" index="4" instance=ExtResource( 21 )]
 
 position = Vector2( -4.36362, -113.142 )
 animation = "2"
 
-[node name="Ballon5" parent="Ballons" index="5" instance=ExtResource( 17 )]
+[node name="Ballon5" parent="Ballons" index="5" instance=ExtResource( 21 )]
 
 position = Vector2( 44.7295, -105.844 )
 animation = "5"
@@ -109,11 +143,11 @@ polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -23.8842, -17
 
 [node name="Lines" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-script = ExtResource( 18 )
+script = ExtResource( 22 )
 
 [node name="Line2D" type="Line2D" parent="Lines" index="0"]
 
+position = Vector2( 1.85059, 0 )
 rotation = -2.85962
 points = PoolVector2Array( 12.2357, 29.5707, 58.5552, 57.3267 )
 width = 2.0
@@ -197,7 +231,7 @@ autostart = false
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 19 )
+stream = ExtResource( 23 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
