@@ -23,15 +23,15 @@ func _ready():
 func set_pig_texts():
 	$PigOneButton.text = "Unlocked"
 	$PigTwoButton.text = "Fly "+ str(unlock_2)
-	if (Global.highscore > unlock_2):
+	if (Global.sum_score > unlock_2):
 		Global.pig_2_unlocked = 1
 		$PigTwoButton.text = "Ulocked"
 	$PigThreeButton.text = "Fly "+ str(unlock_3)
-	if (Global.highscore > unlock_3):
+	if (Global.sum_score > unlock_3):
 		Global.pig_3_unlocked = 1
 		$PigThreeButton.text = "Ulocked"
 	$PigFourButton.text = "Fly "+ str(unlock_4)
-	if (Global.highscore > unlock_4):
+	if (Global.sum_score > unlock_4):
 		Global.pig_4_unlocked = 1
 		$PigFourButton.text = "Ulocked"
 	

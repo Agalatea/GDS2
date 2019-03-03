@@ -15,8 +15,8 @@
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 spawn_obstackle_timer = 1
-score_stage_one_change_limit = 10
-score_stage_two_change_limit = 20
+score_stage_one_change_limit = 50
+score_stage_two_change_limit = 150
 
 [node name="Transitions" type="Node2D" parent="." index="0"]
 
