@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/CloudEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/clouds/Assety_-04.png" type="Texture" id=2]
 [ext_resource path="res://Graphic/clouds/Assety_-05.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/clouds/Assety_-03.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -17,11 +16,6 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "cloud_dark_big",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "cloud_white",
 "speed": 5.0
 } ]
 
@@ -132,7 +126,7 @@ position = Vector2( -1.47018, -1.36762 )
 scale = Vector2( 1, 0.911214 )
 shape = SubResource( 3 )
 
-[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 5 )]
+[node name="SwipeDetector" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 0, -0.174824 )
 
