@@ -7,7 +7,7 @@ signal swiped(direction)
 signal swipe_canceled(start_position)
 
 # Detect if swipe was diagonal, diagonal swipe threshold
-export (float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.3 # set manually
+export (float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.5 # set manually
 #Swipe timeout, time for perform swipe
 onready var timer = $Timer
 
@@ -47,6 +47,7 @@ func _end_detection(position):
 
 func _on_Timer_timeout():
 	emit_signal('swipe_canceled', swipe_start_position)
+	
 
 
 #example of connection and usage 

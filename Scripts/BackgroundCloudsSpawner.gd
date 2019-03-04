@@ -27,7 +27,7 @@ func spawn_cloud_background(position):
 	$CloudSpawnTimer.wait_time = spawn_period
 
 func _on_CloudSpawnTimer_timeout():
-	if Global.Gamestate.game_state != Global.Gamestate.States.SPACE_STAGE:
+	if Global.Gamestate.game_state != Global.Gamestate.States.SPACE_STAGE and Global.Player.state != Global.Player.States.DEAD:
 		var player_pos = Global.Player.global_position
 		var spawn_pos = Vector2()
 		spawn_pos.y = player_pos.y - Global.screen_size_y

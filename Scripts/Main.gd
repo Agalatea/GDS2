@@ -7,6 +7,7 @@ func _ready():
 	$HBoxContainer/BestScore.text = str(Global.highscore)
 	$HBoxContainer2/SumScore.text = str(Global.sum_score)
 	$MenuTap.stream = Global.menu_tap_sound
+	set_pig_animation()
 #func _input(event):
 #	if event is InputEventScreenTouch:
 #		print("touch")
@@ -29,7 +30,16 @@ func _ready():
 
 func _on_Timer_timeout():
 	pass
-
+	
+func set_pig_animation():
+	if (Global.active_pig == 1):
+		$AnimatedSprite.animation = "idle_1"
+	elif (Global.active_pig ==2):
+		$AnimatedSprite.animation = "idle_2"
+	elif (Global.active_pig ==3):
+		$AnimatedSprite.animation = "idle_3"
+	elif (Global.active_pig ==4):
+		$AnimatedSprite.animation = "idle_4"
 
 func _on_TextureButton_pressed():
 	$MenuTap.play()

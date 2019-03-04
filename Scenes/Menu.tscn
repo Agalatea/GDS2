@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
@@ -14,15 +14,23 @@
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=12]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=13]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=14]
-[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=15]
-[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=16]
-[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=17]
-[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=18]
-[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=19]
-[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Graphic/Menu/Assety_-58.png" type="Texture" id=23]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=15]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=16]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=17]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=18]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=19]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=20]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=21]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=22]
+[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=23]
+[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=24]
+[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=25]
+[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=26]
+[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=27]
+[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Graphic/Menu/Assety_-58.png" type="Texture" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -45,7 +53,22 @@ _sections_unfolded = [ "Font", "Settings" ]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Idlepig",
+"name": "idle_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "idle_3",
 "speed": 5.0
 } ]
 
@@ -283,11 +306,11 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="7"]
 
-position = Vector2( 331.213, 814.79 )
+position = Vector2( 333.364, 785.772 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
-animation = "Idlepig"
-frame = 6
+animation = "idle_1"
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -301,32 +324,32 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="AnimatedSprite/Ballons" index="0"]
 
 position = Vector2( -41.5151, -151.62 )
-texture = ExtResource( 15 )
+texture = ExtResource( 23 )
 
 [node name="Sprite2" type="Sprite" parent="AnimatedSprite/Ballons" index="1"]
 
 position = Vector2( 6.31757, -161.548 )
-texture = ExtResource( 16 )
+texture = ExtResource( 24 )
 
 [node name="Sprite3" type="Sprite" parent="AnimatedSprite/Ballons" index="2"]
 
 position = Vector2( -3.60999, -113.715 )
-texture = ExtResource( 17 )
+texture = ExtResource( 25 )
 
 [node name="Sprite4" type="Sprite" parent="AnimatedSprite/Ballons" index="3"]
 
 position = Vector2( 53.2476, -140.79 )
-texture = ExtResource( 18 )
+texture = ExtResource( 26 )
 
 [node name="Sprite5" type="Sprite" parent="AnimatedSprite/Ballons" index="4"]
 
 position = Vector2( 46.0276, -106.495 )
-texture = ExtResource( 19 )
+texture = ExtResource( 27 )
 
 [node name="Sprite6" type="Sprite" parent="AnimatedSprite/Ballons" index="5"]
 
 position = Vector2( -41.5151, -103.788 )
-texture = ExtResource( 20 )
+texture = ExtResource( 28 )
 
 [node name="Lines" type="Node2D" parent="AnimatedSprite" index="1"]
 
@@ -393,11 +416,11 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="EffectsSound" parent="." index="8" instance=ExtResource( 21 )]
+[node name="EffectsSound" parent="." index="8" instance=ExtResource( 29 )]
 
 position = Vector2( 601.202, 1158.28 )
 
-[node name="BackgroundSound" parent="." index="9" instance=ExtResource( 22 )]
+[node name="BackgroundSound" parent="." index="9" instance=ExtResource( 30 )]
 
 position = Vector2( 518, 1152 )
 
@@ -431,7 +454,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 23 )
+texture_normal = ExtResource( 31 )
 _sections_unfolded = [ "Textures" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -7,7 +7,7 @@ export (float) var impulse_value_y = -15
 
 var dying = false
 
-onready var CloudTypes = ["cloud_dark", "cloud_white", "cloud_dark_big"] #coś jest nie tak z white cloud
+onready var CloudTypes = ["cloud_dark", "cloud_dark_big"] #coś jest nie tak z white cloud
 
 func init(pos):
 	global_position = pos
