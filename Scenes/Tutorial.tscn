@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Graphic/clouds/Assety_-07.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/BirdEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CloudEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sound/music_1_menu.wav" type="AudioStream" id=7]
+
+[node name="Tutorial" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="TapLabel" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_top = 48.0
+margin_right = 646.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Tap moving obstacles"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SwipeLabel" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 92.0
+margin_top = 544.0
+margin_right = 639.0
+margin_bottom = 604.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+text = "Swipe static obstacles"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TextureRect" type="TextureRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -4.22064
+margin_top = 60.2305
+margin_right = 715.779
+margin_bottom = 585.23
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="Bird" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 328.779, 308.23 )
+
+[node name="Cloud" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 243.16, 726.054 )
+
+[node name="Cloud2" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 380.151, 938.391 )
+
+[node name="Button" type="Button" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -89.0
+margin_top = 1055.0
+margin_right = 223.0
+margin_bottom = 1121.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.902344, 0.86985, 0.0704956, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "       Go!        "
+flat = true
+align = 1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "BGM"
+_sections_unfolded = [ "Pause" ]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+

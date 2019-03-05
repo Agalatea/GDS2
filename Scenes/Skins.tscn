@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Graphic/pig/pig_wave__pig_wave_000.png" type="Texture" id=4]
 [ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_wave/pig_wave__pig_wave_000_green.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_3.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_4.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=7]
 [ext_resource path="res://Graphic/Game over/Assety_-49.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=10]
@@ -260,8 +260,9 @@ _sections_unfolded = [ "custom_styles" ]
 
 [node name="PigThree" type="Sprite" parent="." index="7"]
 
-position = Vector2( 184.706, 802.042 )
+position = Vector2( 187, 775 )
 texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="PigThreeButton" type="Button" parent="." index="8"]
 
@@ -293,8 +294,9 @@ _sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
 [node name="PigFour" type="Sprite" parent="." index="9"]
 
-position = Vector2( 511.885, 790.681 )
+position = Vector2( 542.794, 775 )
 texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PigFourButton" type="Button" parent="." index="10"]
 

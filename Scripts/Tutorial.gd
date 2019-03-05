@@ -5,15 +5,15 @@ extends CanvasLayer
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$Cloud/AnimatedSprite.play("cloud_dark_big")
+	$Cloud2/AnimatedSprite.play("cloud_dark")
+	
 
-func _input(event):
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		get_tree().change_scene(Global.Tutorial)
-		
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+func _on_Button_pressed():
+	get_tree().change_scene(Global.Menu)
+

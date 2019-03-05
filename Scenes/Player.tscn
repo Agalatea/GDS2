@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_000.png" type="Texture" id=2]
@@ -10,26 +10,39 @@
 [ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=8]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=9]
 [ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=10]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_4.png" type="Texture" id=11]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_001.png" type="Texture" id=12]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=13]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=14]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=15]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=16]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=17]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=18]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=19]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=20]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=21]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=22]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=23]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=24]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=25]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_3.png" type="Texture" id=26]
-[ext_resource path="res://Scripts/Ballons.gd" type="Script" id=27]
-[ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scripts/Lines.gd" type="Script" id=29]
-[ext_resource path="res://Sound/DeathPop.wav" type="AudioStream" id=30]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=12]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_001_blue.png" type="Texture" id=13]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_002_blue.png" type="Texture" id=14]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_003_blue.png" type="Texture" id=15]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_004_blue.png" type="Texture" id=16]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_005_blue.png" type="Texture" id=17]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_006_blue.png" type="Texture" id=18]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_007_blue.png" type="Texture" id=19]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_001_purple.png" type="Texture" id=20]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_002_purple.png" type="Texture" id=21]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_003_purple.png" type="Texture" id=22]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_004_purple.png" type="Texture" id=23]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_005_purple.png" type="Texture" id=24]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_006_purple.png" type="Texture" id=25]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_007_purple.png" type="Texture" id=26]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=27]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=28]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=29]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=30]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=31]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=32]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=33]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=34]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=35]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=36]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=37]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=38]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=39]
+[ext_resource path="res://Scripts/Ballons.gd" type="Script" id=40]
+[ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Scripts/Lines.gd" type="Script" id=42]
+[ext_resource path="res://Sound/DeathPop.wav" type="AudioStream" id=43]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -54,27 +67,27 @@ animations = [ {
 "name": "idle_4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "lookup_3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "lookup_4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 33 ) ],
 "loop": true,
 "name": "lookup_2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 39 ) ],
 "loop": false,
 "name": "lookup_1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "idle_3",
 "speed": 5.0
@@ -110,35 +123,35 @@ _sections_unfolded = [ "Transform" ]
 [node name="Ballons" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
-script = ExtResource( 27 )
+script = ExtResource( 40 )
 
-[node name="Ballon" parent="Ballons" index="0" instance=ExtResource( 28 )]
+[node name="Ballon" parent="Ballons" index="0" instance=ExtResource( 41 )]
 
 editor/display_folded = true
 animation = "0"
 playing = false
 
-[node name="Ballon1" parent="Ballons" index="1" instance=ExtResource( 28 )]
+[node name="Ballon1" parent="Ballons" index="1" instance=ExtResource( 41 )]
 
 position = Vector2( 10.8951, -152.947 )
 animation = "7"
 
-[node name="Ballon2" parent="Ballons" index="2" instance=ExtResource( 28 )]
+[node name="Ballon2" parent="Ballons" index="2" instance=ExtResource( 41 )]
 
 position = Vector2( 57.9979, -148.966 )
 animation = "4"
 
-[node name="Ballon3" parent="Ballons" index="3" instance=ExtResource( 28 )]
+[node name="Ballon3" parent="Ballons" index="3" instance=ExtResource( 41 )]
 
 position = Vector2( -42.8419, -103.854 )
 animation = "2"
 
-[node name="Ballon4" parent="Ballons" index="4" instance=ExtResource( 28 )]
+[node name="Ballon4" parent="Ballons" index="4" instance=ExtResource( 41 )]
 
 position = Vector2( -4.36362, -113.142 )
 animation = "2"
 
-[node name="Ballon5" parent="Ballons" index="5" instance=ExtResource( 28 )]
+[node name="Ballon5" parent="Ballons" index="5" instance=ExtResource( 41 )]
 
 position = Vector2( 44.7295, -105.844 )
 animation = "5"
@@ -151,7 +164,7 @@ polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -23.8842, -17
 
 [node name="Lines" type="Node2D" parent="." index="3"]
 
-script = ExtResource( 29 )
+script = ExtResource( 42 )
 
 [node name="Line2D" type="Line2D" parent="Lines" index="0"]
 
@@ -239,7 +252,7 @@ autostart = false
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 30 )
+stream = ExtResource( 43 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
