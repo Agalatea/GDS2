@@ -13,7 +13,7 @@
 [node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 spawn_obstackle_timer = 1
 score_stage_one_change_limit = 50
 score_stage_two_change_limit = 150

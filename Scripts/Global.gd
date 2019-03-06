@@ -24,7 +24,7 @@ var Menu = "res://Scenes/Menu.tscn"
 var Main = "res://Scenes/Main.tscn"
 var GameOver = "res://Scenes/GameOver.tscn"
 var About = "res://Scenes/About.tscn"
-var Tutorial = "res://Scenes/Tutorial.tscn"
+var Tutorial = "res://Scenes/Tutorial2.tscn"
 
 # TODO add references to scenes that will spawn somewhere
 var background_first = preload("res://Graphic/baground/Assety_-08.png")

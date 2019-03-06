@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Tutorial2.gd" type="Script" id=1]
+[ext_resource path="res://Graphic/baground/Assety_-08.png" type="Texture" id=2]
+[ext_resource path="res://Graphic/clouds/Assety_-07.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Sound/music_1_menu.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/BirdEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlaneEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/CloudEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/StormCloud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SpaceDogTutorial.tscn" type="PackedScene" id=10]
+
+[node name="Tutorial" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+[node name="StartingBackground" type="Sprite" parent="." index="0"]
+
+position = Vector2( 378.95, 1051.87 )
+texture = ExtResource( 2 )
+offset = Vector2( -10, 0 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 370.356, 326.351 )
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -89.0
+margin_top = 1055.0
+margin_right = 223.0
+margin_bottom = 1121.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.902344, 0.86985, 0.0704956, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "       Go!        "
+flat = true
+align = 1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "BGM"
+_sections_unfolded = [ "Pause" ]
+
+[node name="Bird" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 296.071, 385.449 )
+
+[node name="TapLabel" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_top = 48.0
+margin_right = 646.0
+margin_bottom = 108.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Tap moving obstacles"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="SwipeLabel" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 92.0
+margin_top = 544.0
+margin_right = 639.0
+margin_bottom = 604.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Swipe static obstacles"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Plane" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 477.777, 198.903 )
+
+[node name="Cloud" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 235.813, 709.489 )
+
+[node name="StormCloud" parent="." index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 532.858, 885.949 )
+
+[node name="SpaceDog" parent="." index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 114.362, 942.714 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+
