@@ -5,9 +5,9 @@ extends Node2D
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	if Global.tutorial_shown == 0:
+		Global.tutorial_shown = 1
+	
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

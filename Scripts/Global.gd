@@ -15,6 +15,7 @@ var sum_score = 0
 var sesion_score = 0
 var background_sound = "on"
 var effects_sound = "on"
+var tutorial_shown = 0
 var values_from_file = {}
 var screen_size_x = 0
 var screen_size_y = 0
@@ -66,7 +67,7 @@ func setup():
 		f.open(score_file, File.READ)
 		var content = f.get_as_text()
 		if not content:
-			content =  "0,0,on,on,1,0,0,0,1"
+			content =  "0,0,on,on,1,0,0,0,1,0"
 		values_from_file = content.split(",")
 		highscore = int(values_from_file[0])
 		sum_score = int(values_from_file[1])
@@ -78,6 +79,7 @@ func setup():
 			pig_3_unlocked =  int (values_from_file[6])
 			pig_4_unlocked =  int (values_from_file[7])
 			active_pig =  int (values_from_file[8])
+			tutorial_shown = int(values_from_file[9])
 		f.close()
 		
 func sum_up_game():
@@ -105,7 +107,7 @@ func save_add_score():
 func save():
 	var f = File.new()
 	f.open(score_file, File.WRITE)
-	f.store_string(str(highscore) +","+ str(sum_score)+","+background_sound+","+effects_sound+","+str(pig_1_unlocked)+","+str(pig_2_unlocked)+","+str(pig_3_unlocked)+","+str(pig_4_unlocked)+","+str(active_pig))
+	f.store_string(str(highscore) +","+ str(sum_score)+","+background_sound+","+effects_sound+","+str(pig_1_unlocked)+","+str(pig_2_unlocked)+","+str(pig_3_unlocked)+","+str(pig_4_unlocked)+","+str(active_pig)+","+str(tutorial_shown))
 	f.close()
 
 

@@ -11,8 +11,10 @@ func _ready():
 
 func _input(event):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		get_tree().change_scene(Global.Tutorial)
-		
+		if Global.tutorial_shown == 0:
+			get_tree().change_scene(Global.Tutorial)
+		else:
+			get_tree().change_scene(Global.Menu)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
