@@ -78,7 +78,7 @@ func _physics_process(delta):
 		move_and_slide(motion)
 		
 	elif state in [States.DEAD]:
-		move_and_slide(-motion *2)
+		move_and_slide(-motion *3)
 		
 	#Colided with something	
 	if get_slide_count() > 0: 
@@ -111,7 +111,7 @@ func increase_speed_over_time():
 func end():
 	state = States.DEAD
 	$CollisionPolygon2D.disabled = true
-	$TapEnemy.play()
+	$Death.play()
 	$Ballons.destroy_baloons()
 	$Lines.destroy_lines()
 	$Camera2D.current = false

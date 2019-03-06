@@ -124,7 +124,7 @@ speed = 150
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

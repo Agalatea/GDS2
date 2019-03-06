@@ -40,6 +40,9 @@ var swiped_enemy_sound = preload("res://Sound/Swipe.wav")
 var highscore_sound = preload("res://Sound/HighScore.wav")
 var death_pop_sound = preload ("res://Sound/DeathPop.wav")
 var death_zap_sound = preload("res://Sound/DeathZap.wav")
+var boom_sound = preload("res://Sound/Boom.wav")
+var paper_tap_sound = preload("res://Sound/Tap.wav")
+
 
 #TODO - load different pigs
 var pig_1_unlocked = 1

@@ -85,6 +85,7 @@ impulse_value_y = -15
 position = Vector2( 1.08072, 27.5584 )
 frames = SubResource( 1 )
 animation = "storm1"
+frame = 2
 playing = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="1"]

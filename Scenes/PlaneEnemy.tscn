@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlaneEnemy.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=9]
 [ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=10]
 [ext_resource path="res://Graphic/Animations/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=11]
+[ext_resource path="res://Sound/Boom.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -95,7 +96,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 101.558, 80.5628 )
 
-[node name="Plane" type="Node2D"]
+[node name="Plane" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
@@ -118,6 +119,7 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -139,7 +141,7 @@ shape = SubResource( 4 )
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="3"]
 
-stream = null
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

@@ -4,7 +4,7 @@ var dying = false
 export (int) var falling_speed  = 100
 
 func _ready():
-	$TapEnemy.stream = Global.death_pop_sound
+	$TapEnemy.stream = Global.paper_tap_sound
 	$AnimationPlayer.play("fly")
 	
 
