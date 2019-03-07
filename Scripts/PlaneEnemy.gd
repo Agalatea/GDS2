@@ -2,7 +2,7 @@ extends Area2D
 
 var dying = false
 export (int) var falling_speed  = 100
-onready var animations = ["flt", "fly_rev"]
+onready var animations = ["fly", "fly_rev"]
 
 
 func _ready():

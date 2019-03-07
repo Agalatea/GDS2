@@ -91,7 +91,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource_name = "fly_rev"
 length = 4.0
@@ -122,12 +122,12 @@ tracks/1/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 101.558, 80.5628 )
 
-[node name="Plane" type="Node2D"]
+[node name="Plane" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
@@ -150,6 +150,7 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -162,12 +163,12 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/fade_out = SubResource( 2 )
 anims/fly = SubResource( 3 )
-anims/fly_rev = SubResource( 5 )
+anims/fly_rev = SubResource( 4 )
 blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="2"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="3"]
 
