@@ -1,59 +1,60 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
 [ext_resource path="res://Graphic/Menu/Assety_-37.png" type="Texture" id=3]
-[ext_resource path="res://Graphic/Menu/Assety_-39.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Menu/Assety_-38.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/fonty-score/CALIBRIB.TTF" type="DynamicFontData" id=6]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=8]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=9]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_001.png" type="Texture" id=10]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=11]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=12]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=13]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=14]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=15]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=16]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=17]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=18]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=19]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=20]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=21]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=22]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=23]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_001_purple.png" type="Texture" id=24]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_002_purple.png" type="Texture" id=25]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_004_purple.png" type="Texture" id=26]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_003_purple.png" type="Texture" id=27]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_005_purple.png" type="Texture" id=28]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_006_purple.png" type="Texture" id=29]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_007_purple.png" type="Texture" id=30]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=31]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_001_blue.png" type="Texture" id=32]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_002_blue.png" type="Texture" id=33]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_003_blue.png" type="Texture" id=34]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_004_blue.png" type="Texture" id=35]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_005_blue.png" type="Texture" id=36]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_006_blue.png" type="Texture" id=37]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_007_blue.png" type="Texture" id=38]
-[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=39]
-[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=40]
-[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=41]
-[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=42]
-[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=43]
-[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=44]
-[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=45]
-[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=46]
-[ext_resource path="res://Graphic/Menu/Assety_-58.png" type="Texture" id=47]
+[ext_resource path="res://Graphic/Menu/Assety_-59.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Menu/Assety_-39.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Menu/Assety_-38.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/fonty-score/CALIBRIB.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=12]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=13]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=14]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=15]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=16]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_001_purple.png" type="Texture" id=17]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_002_purple.png" type="Texture" id=18]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_004_purple.png" type="Texture" id=19]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_003_purple.png" type="Texture" id=20]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_005_purple.png" type="Texture" id=21]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_006_purple.png" type="Texture" id=22]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_007_purple.png" type="Texture" id=23]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=24]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_001_blue.png" type="Texture" id=25]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_002_blue.png" type="Texture" id=26]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_003_blue.png" type="Texture" id=27]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_004_blue.png" type="Texture" id=28]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_005_blue.png" type="Texture" id=29]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_006_blue.png" type="Texture" id=30]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_007_blue.png" type="Texture" id=31]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=32]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=33]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=34]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_001.png" type="Texture" id=35]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=36]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=37]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=38]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=39]
+[ext_resource path="res://Graphic/balloons/Assety_-12.png" type="Texture" id=40]
+[ext_resource path="res://Graphic/balloons/Assety_-13.png" type="Texture" id=41]
+[ext_resource path="res://Graphic/balloons/Assety_-14.png" type="Texture" id=42]
+[ext_resource path="res://Graphic/balloons/Assety_-15.png" type="Texture" id=43]
+[ext_resource path="res://Graphic/balloons/Assety_-19.png" type="Texture" id=44]
+[ext_resource path="res://Graphic/balloons/Assety_-17.png" type="Texture" id=45]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Graphic/Menu/Assety_-58.png" type="Texture" id=48]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 60
 use_mipmaps = false
 use_filter = true
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -61,34 +62,34 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "idle_1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "idle_2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "idle_4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "idle_3",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle_1",
+"speed": 5.0
 } ]
 
-[node name="Node" type="CanvasLayer"]
+[node name="Node" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -129,10 +130,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 166.0
-margin_top = 324.0
-margin_right = 541.0
-margin_bottom = 512.0
+margin_left = 168.0
+margin_top = 282.0
+margin_right = 543.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -148,7 +149,32 @@ texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 3 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Exit" type="TextureButton" parent="." index="3"]
+[node name="HowToPlay" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 214.0
+margin_top = 488.0
+margin_right = 494.0
+margin_bottom = 570.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Exit" type="TextureButton" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -169,10 +195,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="About" type="TextureButton" parent="." index="4"]
+[node name="About" type="TextureButton" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -193,12 +219,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." index="5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="6"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -259,8 +286,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." index="6"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." index="7"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.0
 anchor_right = 0.5
@@ -320,13 +348,14 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="7"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 333.364, 785.772 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "idle_1"
-frame = 2
+frame = 8
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -339,32 +368,32 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="AnimatedSprite/Ballons" index="0"]
 
 position = Vector2( -41.5151, -151.62 )
-texture = ExtResource( 39 )
+texture = ExtResource( 40 )
 
 [node name="Sprite2" type="Sprite" parent="AnimatedSprite/Ballons" index="1"]
 
 position = Vector2( 6.31757, -161.548 )
-texture = ExtResource( 40 )
+texture = ExtResource( 41 )
 
 [node name="Sprite3" type="Sprite" parent="AnimatedSprite/Ballons" index="2"]
 
 position = Vector2( -3.60999, -113.715 )
-texture = ExtResource( 41 )
+texture = ExtResource( 42 )
 
 [node name="Sprite4" type="Sprite" parent="AnimatedSprite/Ballons" index="3"]
 
 position = Vector2( 53.2476, -140.79 )
-texture = ExtResource( 42 )
+texture = ExtResource( 43 )
 
 [node name="Sprite5" type="Sprite" parent="AnimatedSprite/Ballons" index="4"]
 
 position = Vector2( 46.0276, -106.495 )
-texture = ExtResource( 43 )
+texture = ExtResource( 44 )
 
 [node name="Sprite6" type="Sprite" parent="AnimatedSprite/Ballons" index="5"]
 
 position = Vector2( -41.5151, -103.788 )
-texture = ExtResource( 44 )
+texture = ExtResource( 45 )
 
 [node name="Lines" type="Node2D" parent="AnimatedSprite" index="1"]
 
@@ -431,15 +460,15 @@ texture_mode = 1213991936
 sharp_limit = 2.0
 round_precision = 8
 
-[node name="EffectsSound" parent="." index="8" instance=ExtResource( 45 )]
+[node name="EffectsSound" parent="." index="9" instance=ExtResource( 46 )]
 
 position = Vector2( 601.202, 1158.28 )
 
-[node name="BackgroundSound" parent="." index="9" instance=ExtResource( 46 )]
+[node name="BackgroundSound" parent="." index="10" instance=ExtResource( 47 )]
 
 position = Vector2( 518, 1152 )
 
-[node name="MenuTap" type="AudioStreamPlayer" parent="." index="10"]
+[node name="MenuTap" type="AudioStreamPlayer" parent="." index="11"]
 
 stream = null
 volume_db = 0.0
@@ -448,7 +477,7 @@ autoplay = false
 mix_target = 0
 bus = "Effects"
 
-[node name="Skins" type="TextureButton" parent="." index="11"]
+[node name="Skins" type="TextureButton" parent="." index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -469,12 +498,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 47 )
+texture_normal = ExtResource( 48 )
 _sections_unfolded = [ "Textures" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [connection signal="pressed" from="Play" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="pressed" from="HowToPlay" to="." method="_on_HowToPlay_pressed"]
 
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 

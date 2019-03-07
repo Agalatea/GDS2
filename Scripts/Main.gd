@@ -58,3 +58,8 @@ func _on_Exit_pressed():
 func _on_Skins_pressed():
 	$MenuTap.play()
 	get_tree().change_scene("res://Scenes/Skins.tscn")
+
+
+func _on_HowToPlay_pressed():
+	$MenuTap.play()
+	get_tree().change_scene(Global.Tutorial)
