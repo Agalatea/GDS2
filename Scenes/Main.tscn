@@ -32,6 +32,7 @@ _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform",
 
 [node name="BackgroundClouds" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 min_look_up_value = 4
@@ -48,10 +49,13 @@ autostart = true
 
 [node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
 
+editor/display_folded = true
+
 [node name="Player" parent="." index="5" groups=[
 "Player",
 ] instance=ExtResource( 7 )]
 
+editor/display_folded = true
 position = Vector2( 358.892, 52.4701 )
 rotation = -0.00872665
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform", "collision" ]
@@ -71,6 +75,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", 
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0

@@ -95,7 +95,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 71.6356, 31.9836 )
 
-[node name="Ufo" type="Node2D"]
+[node name="Ufo" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
@@ -118,7 +118,7 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]

@@ -3,8 +3,8 @@
 [ext_resource path="res://Scripts/Skins.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Graphic/pig/pig_wave__pig_wave_000.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_wave/pig_wave__pig_wave_000_green.png" type="Texture" id=5]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=4]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=5]
 [ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=6]
 [ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=7]
 [ext_resource path="res://Graphic/Game over/Assety_-49.png" type="Texture" id=8]
@@ -70,54 +70,34 @@ stretch_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." index="1"]
 
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = 198.0
-margin_top = 40.0
-margin_right = 521.0
-margin_bottom = 60.0
+margin_left = -360.0
+margin_top = 36.0
+margin_right = 361.0
+margin_bottom = 118.0
+grow_horizontal = 0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Margin", "Rect" ]
+alignment = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "custom_constants" ]
 
-[node name="ScoreText" type="Label" parent="HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 275.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-size_flags_stretch_ratio = 1.06
-custom_fonts/font = ExtResource( 3 )
-text = "Best Score:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-
-[node name="BestScore" type="Label" parent="HBoxContainer" index="1"]
+[node name="BestScore" type="Label" parent="HBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 279.0
-margin_right = 309.0
-margin_bottom = 60.0
+margin_left = 345.0
+margin_top = 11.0
+margin_right = 375.0
+margin_bottom = 71.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -133,54 +113,34 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." index="2"]
 
-editor/display_folded = true
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = 198.0
+margin_left = -360.0
 margin_top = 114.0
-margin_right = 521.0
-margin_bottom = 174.0
+margin_right = 361.0
+margin_bottom = 213.0
+grow_horizontal = 0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
+alignment = 1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
-[node name="SumText" type="Label" parent="HBoxContainer2" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 275.0
-margin_bottom = 60.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-text = "Sum Score:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="SumScore" type="Label" parent="HBoxContainer2" index="1"]
+[node name="SumScore" type="Label" parent="HBoxContainer2" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 279.0
-margin_right = 309.0
-margin_bottom = 60.0
+margin_left = 345.0
+margin_top = 19.0
+margin_right = 375.0
+margin_bottom = 79.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -194,10 +154,29 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="PigOne" type="Sprite" parent="." index="3"]
+[node name="PigOne" type="TextureButton" parent="." index="3"]
 
-position = Vector2( 177.89, 436.238 )
-texture = ExtResource( 4 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 315.0
+margin_right = 301.0
+margin_bottom = 532.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="PigOneButton" type="Button" parent="." index="4"]
 
@@ -226,10 +205,29 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="PigTwo" type="Sprite" parent="." index="5"]
+[node name="PigTwo" type="TextureButton" parent="." index="5"]
 
-position = Vector2( 520.973, 436.238 )
-texture = ExtResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 411.0
+margin_top = 315.0
+margin_right = 632.0
+margin_bottom = 532.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="PigTwoButton" type="Button" parent="." index="6"]
 
@@ -258,11 +256,29 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_styles" ]
 
-[node name="PigThree" type="Sprite" parent="." index="7"]
+[node name="PigThree" type="TextureButton" parent="." index="7"]
 
-position = Vector2( 187, 775 )
-texture = ExtResource( 6 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 661.0
+margin_right = 301.0
+margin_bottom = 878.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Rect", "Region", "Textures", "Transform" ]
 
 [node name="PigThreeButton" type="Button" parent="." index="8"]
 
@@ -292,11 +308,29 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_fonts", "custom_styles" ]
 
-[node name="PigFour" type="Sprite" parent="." index="9"]
+[node name="PigFour" type="TextureButton" parent="." index="9"]
 
-position = Vector2( 542.794, 775 )
-texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 411.0
+margin_top = 661.0
+margin_right = 632.0
+margin_bottom = 878.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures", "Transform", "Z Index" ]
 
 [node name="PigFourButton" type="Button" parent="." index="10"]
 
@@ -361,17 +395,26 @@ bus = "Effects"
 
 [node name="EffectsSound" parent="." index="13" instance=ExtResource( 9 )]
 
-position = Vector2( 600.018, 1172.39 )
+position = Vector2( 615, 1165 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="BackgroundSound" parent="." index="14" instance=ExtResource( 10 )]
 
 position = Vector2( 525.04, 1167.85 )
 
+[connection signal="pressed" from="PigOne" to="." method="_on_PigOne_pressed"]
+
 [connection signal="pressed" from="PigOneButton" to="." method="_on_PigOneButton_pressed"]
+
+[connection signal="pressed" from="PigTwo" to="." method="_on_PigTwo_pressed"]
 
 [connection signal="pressed" from="PigTwoButton" to="." method="_on_PigTwoButton_pressed"]
 
+[connection signal="pressed" from="PigThree" to="." method="_on_PigThree_pressed"]
+
 [connection signal="pressed" from="PigThreeButton" to="." method="_on_PigThreeButton_pressed"]
+
+[connection signal="pressed" from="PigFour" to="." method="_on_PigFour_pressed"]
 
 [connection signal="pressed" from="PigFourButton" to="." method="_on_PigFourButton_pressed"]
 

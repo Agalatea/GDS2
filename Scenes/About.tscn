@@ -93,7 +93,7 @@ _sections_unfolded = [ "Textures" ]
 position = Vector2( 278.158, 853.447 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="3"]
@@ -357,11 +357,12 @@ bus = "Effects"
 
 [node name="BackgroundSound" parent="." index="5" instance=ExtResource( 9 )]
 
-position = Vector2( 537.201, 1158.88 )
+position = Vector2( 540, 1165 )
 
 [node name="EffectsSound" parent="." index="6" instance=ExtResource( 10 )]
 
-position = Vector2( 618.585, 1163.1 )
+position = Vector2( 615, 1165 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

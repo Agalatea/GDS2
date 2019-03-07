@@ -10,8 +10,8 @@ export var unlock_4 = 2000
 func _ready():
 	set_pig_texts()
 	$MenuTap.stream = Global.menu_tap_sound
-	$HBoxContainer/BestScore.text = str(Global.highscore)
-	$HBoxContainer2/SumScore.text = str(Global.sum_score)
+	$HBoxContainer/BestScore.text = "Highscore: " + str(Global.highscore)
+	$HBoxContainer2/SumScore.text = "Total score: " + str(Global.sum_score)
 	
 	
 
@@ -77,3 +77,19 @@ func _on_PigFourButton_pressed():
 		Global.active_pig = 4
 		Global.save()
 	set_pig_texts()
+
+
+func _on_PigOne_pressed():
+	_on_PigOneButton_pressed()
+
+
+func _on_PigTwo_pressed():
+	 _on_PigTwoButton_pressed()
+
+
+func _on_PigThree_pressed():
+	_on_PigThreeButton_pressed()
+
+
+func _on_PigFour_pressed():
+	_on_PigFourButton_pressed()

@@ -124,10 +124,12 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="BackgroundSound" parent="." index="1" instance=ExtResource( 4 )]
 
-position = Vector2( 541.992, 1168.35 )
+position = Vector2( 540, 1165 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="EffectsSound" parent="." index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 616.172, 1171.44 )
+position = Vector2( 615, 1165 )
+_sections_unfolded = [ "Transform" ]
 
 

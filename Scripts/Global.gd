@@ -82,6 +82,7 @@ func setup():
 			pig_3_unlocked =  int (values_from_file[6])
 			pig_4_unlocked =  int (values_from_file[7])
 			active_pig =  int (values_from_file[8])
+		if values_from_file.size() > 9:
 			tutorial_shown = int(values_from_file[9])
 		f.close()
 		

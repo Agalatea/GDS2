@@ -4,8 +4,8 @@ extends CanvasLayer
 var game_scene = preload("res://Scenes/Main.tscn")
 
 func _ready():
-	$HBoxContainer/BestScore.text = str(Global.highscore)
-	$HBoxContainer2/SumScore.text = str(Global.sum_score)
+	$HBoxContainer/BestScore.text = "Highscore: " + str(Global.highscore)
+	$HBoxContainer2/SumScore.text = "Total score: " + str(Global.sum_score)
 	$MenuTap.stream = Global.menu_tap_sound
 	set_pig_animation()
 #func _input(event):

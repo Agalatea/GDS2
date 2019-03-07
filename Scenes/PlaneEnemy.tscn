@@ -119,7 +119,6 @@ falling_speed = 100
 
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
