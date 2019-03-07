@@ -8,37 +8,37 @@
 [ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_004.png" type="Texture" id=6]
 [ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_005.png" type="Texture" id=7]
 [ext_resource path="res://Graphic/explode/explode__airplane_airplane_explode_006.png" type="Texture" id=8]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=9]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_006_blue.png" type="Texture" id=10]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_001_blue.png" type="Texture" id=11]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_002_blue.png" type="Texture" id=12]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_003_blue.png" type="Texture" id=13]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_004_blue.png" type="Texture" id=14]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_005_blue.png" type="Texture" id=15]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_007_blue.png" type="Texture" id=16]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=17]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=18]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=19]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=20]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=21]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=22]
-[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=23]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=24]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=25]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=26]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=27]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=28]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=29]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=30]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=31]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=32]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_006_purple.png" type="Texture" id=33]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_001_purple.png" type="Texture" id=34]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_002_purple.png" type="Texture" id=35]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_003_purple.png" type="Texture" id=36]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_004_purple.png" type="Texture" id=37]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_005_purple.png" type="Texture" id=38]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_007_purple.png" type="Texture" id=39]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=9]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=10]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=11]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=12]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_006_purple.png" type="Texture" id=13]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_001_purple.png" type="Texture" id=14]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_002_purple.png" type="Texture" id=15]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_003_purple.png" type="Texture" id=16]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_004_purple.png" type="Texture" id=17]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_005_purple.png" type="Texture" id=18]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_007_purple.png" type="Texture" id=19]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_006_green.png" type="Texture" id=20]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_001_green.png" type="Texture" id=21]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_002_green.png" type="Texture" id=22]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_003_green.png" type="Texture" id=23]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_004_green.png" type="Texture" id=24]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_005_green.png" type="Texture" id=25]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_007_green.png" type="Texture" id=26]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_006.png" type="Texture" id=27]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_005.png" type="Texture" id=28]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_002.png" type="Texture" id=29]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_003.png" type="Texture" id=30]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_004.png" type="Texture" id=31]
+[ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_007.png" type="Texture" id=32]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_006_blue.png" type="Texture" id=33]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_001_blue.png" type="Texture" id=34]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_002_blue.png" type="Texture" id=35]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_003_blue.png" type="Texture" id=36]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_004_blue.png" type="Texture" id=37]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_005_blue.png" type="Texture" id=38]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_007_blue.png" type="Texture" id=39]
 [ext_resource path="res://Scripts/Ballons.gd" type="Script" id=40]
 [ext_resource path="res://Scenes/Ballon.tscn" type="PackedScene" id=41]
 [ext_resource path="res://Scripts/Lines.gd" type="Script" id=42]
@@ -54,42 +54,42 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "idle_3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "lookup_3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "lookup_1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ) ],
-"loop": true,
 "name": "idle_2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 25 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "lookup_2",
+"name": "idle_4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 33 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "lookup_4",
+"name": "idle_3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "idle_1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "idle_4",
+"name": "lookup_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 20 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "lookup_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "lookup_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 33 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "lookup_3",
 "speed": 5.0
 } ]
 
@@ -158,9 +158,8 @@ animation = "5"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
-visible = false
 build_mode = 0
-polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -23.8842, -177.582, -0.997589, -193.866, 26.2903, -188.585, 36.4132, -170.98, 63.261, -170.54, 86.1476, -150.294, 78.6655, -120.805, 77.7852, -106.281, 59.74, -75.9122, 36.8534, -29.6989, 38.6139, 0.669983, 44.3355, 22.6763, 20.1285, 16.0744, -11.1205, 39.4012, -23.004, 18.7152, -54.6931, -4.17145, -57.774, -20.4561, -74.939, -101.88, -74.939, -153.815 )
+polygon = PoolVector2Array( -69.6575, -171.86, -52.0524, -182.863, -14.7822, -169.994, 1.56927, -185.178, 25.5124, -182.55, 36.4132, -170.98, 63.4711, -172.33, 86.1476, -150.294, 78.6655, -120.805, 77.7852, -106.281, 59.74, -75.9122, 36.8534, -29.6989, 38.6139, 0.669983, 44.3355, 22.6763, 20.1285, 16.0744, -11.1205, 39.4012, -23.004, 18.7152, -54.6931, -4.17145, -57.774, -20.4561, -74.939, -101.88, -74.939, -153.815 )
 
 [node name="Lines" type="Node2D" parent="." index="3"]
 

@@ -89,7 +89,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node" type="CanvasLayer" index="0"]
+[node name="Node" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -355,7 +355,7 @@ position = Vector2( 333.364, 785.772 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 3 )
 animation = "idle_1"
-frame = 8
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 
