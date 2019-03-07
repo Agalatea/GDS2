@@ -2,11 +2,13 @@ extends Area2D
 
 var dying = false
 export (int) var falling_speed  = 100
+onready var animations = ["flt", "fly_rev"]
+
 
 func _ready():
 	#$TapEnemy.stream = Global.paper_tap_sound
 	$AnimationPlayer.play("fly")
-	
+	$AnimationPlayer.play(animations[randi() % animations.size()])
 
 
 func _process(delta):

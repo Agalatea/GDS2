@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/BirdEnemySpawn.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlaneEnemy.gd" type="Script" id=2]
@@ -90,7 +90,38 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="Animation" id=4]
+
+resource_name = "fly_rev"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -200, 0 ), Vector2( 200, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 71.6356, 31.9836 )
@@ -102,7 +133,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
-position = Vector2( -92.8147, 0 )
+position = Vector2( -141.149, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -119,9 +150,8 @@ falling_speed = 100
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 2
 playing = true
-flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" index="1"]
@@ -133,13 +163,14 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/fade_out = SubResource( 2 )
 anims/fly = SubResource( 3 )
+anims/fly_rev = SubResource( 4 )
 blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="2"]
 
 position = Vector2( -1.19165, -8.34149 )
 scale = Vector2( 2, 2 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="3"]

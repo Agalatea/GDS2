@@ -101,7 +101,7 @@ func spawn_enemy():
 	spawn_pos.y = player_pos.y - screen_size_y
 	
 	spawn_pos.x = clamp(
-				rand_range(player_pos.x - screen_size_x*0.5, player_pos.x + screen_size_x*0.5),
+				rand_range(player_pos.x - screen_size_x*0.6, player_pos.x + screen_size_x*0.6),
 				spawn_limit_position,
 				screen_size_x - spawn_limit_position)
 				
