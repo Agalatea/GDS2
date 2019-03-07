@@ -15,12 +15,13 @@
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 spawn_obstackle_timer = 1
-score_stage_one_change_limit = 50
-score_stage_two_change_limit = 150
+score_stage_one_change_limit = 20
+score_stage_two_change_limit = 40
 
 [node name="Transitions" type="Node2D" parent="." index="0"]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 First_Second = ExtResource( 3 )
 
 [node name="StartingBackground" type="Sprite" parent="." index="1"]
@@ -87,6 +88,7 @@ scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 

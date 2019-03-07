@@ -9,10 +9,6 @@
 [ext_resource path="res://Graphic/Animations/boom/airboom_2.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Utils/SwipeDetector.tscn" type="PackedScene" id=8]
 
-
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -96,7 +92,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 
-[node name="Dog" type="Area2D" index="0" groups=[
+[node name="Dog" type="Area2D" groups=[
 "Enemy",
 ]]
 
@@ -113,12 +109,16 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Pickable", "Transform", "Visibility" ]
 impulse_value_x = 250
 impulse_value_y = -15
+left_pitch = -13
+right_pitch = 13
+speed = 150
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -129,8 +129,10 @@ rect = Rect2( -10, -10, 20, 20 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
 
+rotation = 3.14159
 build_mode = 0
 polygon = PoolVector2Array( -19.1967, 54.147, 1.24257, 27.868, 113.074, -1.62292, -3.72125, -29.9458, -20.9486, -53.597, -74.3826, -50.6771, -76.1345, -33.7417, -52.4834, -1.03894, -81.0983, 41.0075 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TouchArea" type="Area2D" parent="." index="3"]
 

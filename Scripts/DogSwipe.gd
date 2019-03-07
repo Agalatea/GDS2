@@ -47,7 +47,8 @@ func _ready():
 #	# Update game logic here.
 #	pass
 func _process(delta):
-	global_position += motion *delta
+	pass
+#	global_position += motion *delta
 	
 
 func _on_SwipeDetector_swiped(direction):

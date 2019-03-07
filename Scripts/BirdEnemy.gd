@@ -20,7 +20,7 @@ func destroy():
 
 func _input_event(viewport, event, shape_idx):
 	#To dziala jak tapniecie
-	if Input.is_action_just_released("ui_touch") and not dying:
+	if Input.is_action_just_pressed("ui_touch") and not dying:
 		$TapEnemy.play()
 		dying = true
 		$CollisionPolygon2D.disabled = true

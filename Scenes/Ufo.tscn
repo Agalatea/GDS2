@@ -116,9 +116,10 @@ falling_speed = 100
 
 [node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
 
+scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -136,8 +137,10 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="2"]
 
-position = Vector2( -1.19164, -8.34152 )
+position = Vector2( -1.19165, -8.34149 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TapEnemy" type="AudioStreamPlayer" parent="Area2D" index="3"]
 

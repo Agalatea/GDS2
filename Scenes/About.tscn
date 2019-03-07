@@ -93,7 +93,7 @@ _sections_unfolded = [ "Textures" ]
 position = Vector2( 278.158, 853.447 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="3"]
