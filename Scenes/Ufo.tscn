@@ -147,10 +147,10 @@ falling_speed = 100
 
 [node name="Sprite" type="AnimatedSprite" parent="Area2D" index="0"]
 
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -169,7 +169,7 @@ blend_times = [  ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="2"]
 
 position = Vector2( -1.19165, -8.34149 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
