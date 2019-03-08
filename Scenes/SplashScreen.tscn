@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.950275 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="SplashScreen" type="CanvasLayer"]
+[node name="SplashScreen" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
