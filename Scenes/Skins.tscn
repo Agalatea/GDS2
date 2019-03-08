@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Skins.gd" type="Script" id=1]
 [ext_resource path="res://Graphic/grass/Assety_-33.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/ThemeBig.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Graphic/Animations/pig_lookup/pig_lookup_pig_lookup_000.png" type="Texture" id=4]
-[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=5]
-[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=6]
-[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=7]
-[ext_resource path="res://Graphic/Game over/Assety_-49.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Theme.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Graphic/Animations/pig_green/pig_green/pig_lookup/pig_lookup_pig_lookup_000_green.png" type="Texture" id=6]
+[ext_resource path="res://Graphic/Animations/pig_blue/pig_lookup/pig_lookup_pig_lookup_000_blue.png" type="Texture" id=7]
+[ext_resource path="res://Graphic/Animations/pig_purple/pig_lookup/pig_lookup_pig_lookup_000_purple.png" type="Texture" id=8]
+[ext_resource path="res://Graphic/Game over/Assety_-49.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/EffectsSound.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/BackgroundSound.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -39,7 +40,7 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[node name="Skins" type="CanvasLayer"]
+[node name="Skins" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -47,9 +48,9 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
-unlock_2 = 100
-unlock_3 = 500
-unlock_4 = 1500
+unlock_2 = 500
+unlock_3 = 1500
+unlock_4 = 200
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -185,9 +186,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 86.0
-margin_top = 534.0
+margin_top = 530.0
 margin_right = 321.0
-margin_bottom = 602.0
+margin_bottom = 598.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -195,7 +196,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_hover = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_pressed = Color( 0.188235, 0.32549, 0.803922, 1 )
 toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
@@ -203,7 +208,7 @@ group = null
 text = "Active"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="PigTwo" type="TextureButton" parent="." index="5"]
 
@@ -226,7 +231,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="PigTwoButton" type="Button" parent="." index="6"]
@@ -246,7 +251,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_hover = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_pressed = Color( 0.188235, 0.32549, 0.803922, 1 )
 toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
@@ -254,7 +263,7 @@ group = null
 text = "Fly 1000"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_styles" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_styles" ]
 
 [node name="PigThree" type="TextureButton" parent="." index="7"]
 
@@ -277,7 +286,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Rect", "Region", "Textures", "Transform" ]
 
 [node name="PigThreeButton" type="Button" parent="." index="8"]
@@ -286,10 +295,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 51.0
-margin_top = 891.0
-margin_right = 336.0
-margin_bottom = 959.0
+margin_left = 86.0
+margin_top = 880.0
+margin_right = 371.0
+margin_bottom = 948.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -297,7 +306,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_hover = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_pressed = Color( 0.188235, 0.32549, 0.803922, 1 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -306,7 +319,7 @@ group = null
 text = "Fly 1000"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="PigFour" type="TextureButton" parent="." index="9"]
 
@@ -329,7 +342,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "Textures", "Transform", "Z Index" ]
 
 [node name="PigFourButton" type="Button" parent="." index="10"]
@@ -338,10 +351,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 397.0
-margin_top = 881.0
-margin_right = 652.0
-margin_bottom = 949.0
+margin_left = 377.0
+margin_top = 880.0
+margin_right = 632.0
+margin_bottom = 948.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -349,7 +362,11 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/normal = SubResource( 4 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_disabled = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_hover = Color( 0.188235, 0.32549, 0.803922, 1 )
+custom_colors/font_color_pressed = Color( 0.188235, 0.32549, 0.803922, 1 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 0
@@ -358,7 +375,7 @@ group = null
 text = "Fly 250"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts", "custom_styles" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="TextureButton" type="TextureButton" parent="." index="11"]
 
@@ -381,7 +398,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="MenuTap" type="AudioStreamPlayer" parent="." index="12"]
@@ -393,12 +410,12 @@ autoplay = false
 mix_target = 0
 bus = "Effects"
 
-[node name="EffectsSound" parent="." index="13" instance=ExtResource( 9 )]
+[node name="EffectsSound" parent="." index="13" instance=ExtResource( 10 )]
 
 position = Vector2( 615, 1165 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BackgroundSound" parent="." index="14" instance=ExtResource( 10 )]
+[node name="BackgroundSound" parent="." index="14" instance=ExtResource( 11 )]
 
 position = Vector2( 525.04, 1167.85 )
 
